@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Wallpoet', cursive;
+}
+
+h1.title {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    color: #ffffff;
+    font-size: 6rem;
+    text-align: center;
+    font-weight: 200;
+}
+
+main {
+    position: relative;
+    overflow: hidden;
+}
+
+.land {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.spaceship {
+    position: fixed;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+}
