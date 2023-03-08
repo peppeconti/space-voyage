@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //const spaceship = document.querySelector('.spaceship').contentDocument.getElementById('spaceship');
 
 
-        gsap.set([land], {
+        gsap.set(land, {
             y: '100%'
         });
 
@@ -36,6 +36,29 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             top: '0%',
             opacity: 0
+        });
+
+        gsap.to('.spaceship', {
+            scrollTrigger: {
+                trigger: 'main',
+                start: 'top top',
+                end: '10% center',
+                scrub: true,
+                markers: true
+            },
+            opacity: 1,
+        });
+
+        gsap.to('.spaceship', {
+            scrollTrigger: {
+                trigger: 'main',
+                start: 'top top',
+                end: '50% center',
+                scrub: true,
+                markers: true
+            },
+            top: '50%',
+            transform: 'translate(-50%, -50%)'
         });
 
     }, false);
