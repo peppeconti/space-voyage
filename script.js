@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTrigger: {
                 trigger: 'main',
                 start: 'top top',
-                end: '10% center',
+                end: '20% center',
                 scrub: true,
                 markers: true
             },
