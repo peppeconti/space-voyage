@@ -5,13 +5,12 @@
     font-family: 'Wallpoet', cursive;
 }
 
-h1.title {
+.title {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
     color: #ffffff;
-    font-size: 6rem;
     text-align: center;
     font-weight: 200;
 }
@@ -26,6 +25,7 @@ main {
     position: fixed;
     bottom: 0;
     left: 0;
+    width: 100%;
 }
 
 .spaceship {
@@ -34,4 +34,16 @@ main {
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
+}
+
+@media screen and (min-width: 280px) {
+    .title {
+        font-size: calc(28px + 68 * ((100vw - 280px) / 700));
+    }
+}
+
+@media screen and (min-width: 980px) {
+    .title {
+        font-size: 96px;
+    }
 }
