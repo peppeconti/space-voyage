@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 start: '70% center',
                 end: '90% center',
                 scrub: true,
-                markers: true
+                //markers: true
             },
             y: '0%',
         });
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 start: 'top top',
                 end: '15% center',
                 scrub: true,
-                markers: true
+                //markers: true
             },
             top: '0%',
             opacity: 0
