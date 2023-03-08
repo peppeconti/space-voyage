@@ -17,8 +17,9 @@ h1.title {
 }
 
 main {
-    position: relative;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .land {
