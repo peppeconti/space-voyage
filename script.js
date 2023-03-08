@@ -15,28 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
             y: '100%'
         });
 
-        /*gsap.to('.spaceship', {
-            scrollTrigger: {
-                trigger: 'main',
-                start: 'top top',
-                end: '75% center',
-                scrub: true,
-                markers: true
-            },
-            top: '30%',
-            transform: 'translate(-50%, -50%)'
-        });
-
-        gsap.to('.spaceship', {
-            scrollTrigger: {
-                trigger: 'main',
-                start: '80% center',
-                scrub: 4,
-                markers: true
-            },
-            y: 280
-        });*/
-
         gsap.to(land, {
             scrollTrigger: {
                 trigger: 'main',
@@ -60,16 +38,29 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 0
         });
 
-        /*gsap.to(sky, {
-            scrollTrigger: {
-                trigger: 'main',
-                start: '75% center',
-                markers: true,
-                scrub: true
-            },
-            y: 500,
-        });*/
-
     }, false);
 
 });
+
+
+/*gsap.to('.spaceship', {
+            scrollTrigger: {
+                trigger: 'main',
+                start: 'top top',
+                end: '75% center',
+                scrub: true,
+                markers: true
+            },
+            top: '30%',
+            transform: 'translate(-50%, -50%)'
+        });
+
+        gsap.to('.spaceship', {
+            scrollTrigger: {
+                trigger: 'main',
+                start: '80% center',
+                scrub: 4,
+                markers: true
+            },
+            y: 280
+        });*/

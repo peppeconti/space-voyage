@@ -15,12 +15,6 @@
     font-weight: 200;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
 .land {
     position: fixed;
     bottom: 0;
