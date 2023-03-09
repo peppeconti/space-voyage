@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('load', () => {
 
-        let meteor_tl, ship_tl;
-
         const land = document.querySelector('.land').contentDocument.getElementById('land');
         const title = document.querySelector('.title');
         const spaceship_wrapper = document.querySelector('.spaceship-wrapper');
@@ -98,63 +96,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // ANIMATION
 
-        meteor_tl = new TimelineMax({ repeat: -1, paused: true, });
+        class Animation {
 
-        meteor_tl.to(meteor, +meteor.dataset.speed, {
-            x: + meteor.offsetWidth / (+meteor.dataset.frames / (+meteor.dataset.frames - 1)),
-            ease: SteppedEase.config(+meteor.dataset.frames - 1)
-        });
+            constructor(frames) {
+              this.frames = frames;
+              this.tl = new TimelineMax({ repeat: -1, paused: true, });
+              this.#privateMethod();
+            }
 
-        const playMeteor = () => {
-            meteor_tl.play();
-        };
+            #privateMethod() {
+                this.tl.to(this.frames, +this.frames.dataset.speed, {
+                    x: + this.frames.offsetWidth / (+this.frames.dataset.frames / (+this.frames.dataset.frames - 1)),
+                    ease: SteppedEase.config(+this.frames.dataset.frames - 1)
+                });
+            };
 
-        const reverseMeteor = () => {
-            meteor_tl.reverse();
-        };
+            playFrames = () => {
+                this.tl.play();
+            };
 
-        const pauseMeteor = () => {
-            meteor_tl.pause();
-        };
+            reverseFrames = () => {
+                this.tl.reverse();
+            };
 
-        // SPACESHIP
+            pauseFrames = () => {
+                this.tl.pause();
+            };
 
-        ship_tl = new TimelineMax({ repeat: -1, paused: true, });
+          }
 
-        ship_tl.to(spaceship, +spaceship.dataset.speed, {
-            x: + spaceship.offsetWidth / (+spaceship.dataset.frames / (+spaceship.dataset.frames - 1)),
-            ease: SteppedEase.config(+spaceship.dataset.frames - 1)
-        });
-
-        const playShip = () => {
-            ship_tl.play();
-        };
-
-        const reverseShip = () => {
-            ship_tl.reverse();
-        };
-
-        const pauseShip = () => {
-            ship_tl.pause();
-        };
+        const ship_frames = new Animation(spaceship);
+        const meteor_frames = new Animation(meteor);
 
         ScrollTrigger.observe({
             target: window,
             type: 'scroll',
             onUp: () => {
-                requestAnimationFrame(reverseShip);
-                requestAnimationFrame(reverseMeteor);
+                requestAnimationFrame(ship_frames.reverseFrames);
+                requestAnimationFrame(meteor_frames.reverseFrames);
             },
             onDown: () => {
-                requestAnimationFrame(playShip);
-                requestAnimationFrame(playMeteor);
+                requestAnimationFrame(ship_frames.playFrames);
+                requestAnimationFrame(meteor_frames.playFrames);
             },
             onStop: () => {
-                requestAnimationFrame(pauseShip);
-                requestAnimationFrame(pauseMeteor);
+                requestAnimationFrame(ship_frames.pauseFrames);
+                requestAnimationFrame(meteor_frames.pauseFrames);
             },
         });
-
 
     }, false);
 

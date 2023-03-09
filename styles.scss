@@ -19,6 +19,7 @@
 .blink {
   animation: blink-animation 1s infinite;
   -webkit-animation: blink-animation 1s infinite;
+  -moz-animation: blink-animation 1s infinite;
 }
 
 .land {
@@ -55,6 +56,12 @@
   }
 }
 
+/*@for $i from 1 through 3 {
+  ul:nth-child(3n + #{$i}) {
+    background-color: lighten($base-color, $i * 5%);
+  }
+}*/
+
 
 @keyframes blink-animation {
   0% {
@@ -79,6 +86,18 @@
     opacity: 1;
   }
 
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes blink-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
   100% {
     opacity: 0;
   }

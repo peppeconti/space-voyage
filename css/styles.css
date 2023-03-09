@@ -19,6 +19,7 @@
 .blink {
   animation: blink-animation 1s infinite;
   -webkit-animation: blink-animation 1s infinite;
+  -moz-animation: blink-animation 1s infinite;
 }
 
 .land {
