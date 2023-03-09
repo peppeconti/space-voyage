@@ -10,13 +10,13 @@
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
-    color: #ffffff;
+    color: #fff;
     text-align: center;
     font-weight: 200;
 }
 
 .blink {
-    animation: blinker 1.25s infinite;
+    animation: blinker 1.25s linear infinite;
 }
 
 .land {
@@ -49,15 +49,19 @@
 }
 
 @keyframes blinker {
-    50% {
-      opacity: 0;
+    0% {
+        color: #fff;
     }
-  }
+    50% {
+        color: transparent;
+    }
+}
 
 @media screen and (min-width: 280px) {
     .title {
         font-size: calc(28px + 68 * ((100vw - 280px) / 700));
     }
+
     .spaceship {
         width: calc(50px + 50 * ((100vw - 280px) / 700));
     }
@@ -67,6 +71,7 @@
     .title {
         font-size: 96px;
     }
+
     .spaceship {
         width: 100px;
     }
