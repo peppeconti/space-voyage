@@ -16,7 +16,8 @@
 }
 
 .blink {
-    animation: blinker 1.25s linear infinite;
+    animation: blink-animation 1s infinite;
+    -webkit-animation: blink-animation 1s infinite;
 }
 
 .land {
@@ -48,18 +49,28 @@
     right: 0;
 }
 
-@keyframes blinker {
-    0% {
-        color: #fff;
-    }
+@keyframes blink-animation {
+    0%{  
+        opacity: 0;  
+    }  
+    50%{  
+        opacity: 1;  
+    }  
+    100%{  
+        opacity: 0;  
+    }  
+}
 
-    50% {
-        color: transparent;
-    }
-
-    100% {
-        color: #fff;
-    }
+@-webkit-keyframes blink-animation {
+    0%{  
+        opacity: 0;  
+    }  
+    50%{  
+        opacity: 1;  
+    }  
+    100%{  
+        opacity: 0;  
+    }  
 }
 
 @media screen and (min-width: 280px) {
