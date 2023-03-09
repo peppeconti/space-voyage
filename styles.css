@@ -15,6 +15,10 @@
     font-weight: 200;
 }
 
+.blink {
+    animation: blinker 1.25s infinite;
+}
+
 .land {
     position: fixed;
     bottom: 0;
@@ -29,6 +33,27 @@
     transform: translateX(-50%);
     width: 100px;
 }
+
+.meteor-wrapper {
+    position: fixed;
+    opacity: 1;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+
+.meteor {
+    height: 80px;
+    position: absolute;
+    right: 0;
+}
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
 
 @media screen and (min-width: 280px) {
     .title {
