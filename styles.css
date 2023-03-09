@@ -31,7 +31,6 @@
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
 }
 
 .meteor-wrapper {
@@ -59,10 +58,16 @@
     .title {
         font-size: calc(28px + 68 * ((100vw - 280px) / 700));
     }
+    .spaceship {
+        width: calc(45px + 55 * ((100vw - 280px) / 700));
+    }
 }
 
 @media screen and (min-width: 980px) {
     .title {
         font-size: 96px;
+    }
+    .spaceship {
+        width: 100px;
     }
 }
