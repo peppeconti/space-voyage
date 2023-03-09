@@ -13,6 +13,7 @@
     color: #fff;
     text-align: center;
     font-weight: 200;
+    caret-color: transparent;
 }
 
 .blink {
@@ -44,9 +45,9 @@
 .meteor-wrapper {
     position: fixed;
     opacity: 1;
-    top: 30%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0%;
+    right: -20%;
+    transform: rotate(155deg);
     overflow: hidden;
 }
 

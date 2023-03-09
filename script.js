@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('load', () => {
 
-        let meteor_tl;
-        let ship_tl
+        let meteor_tl, ship_tl;
 
         const land = document.querySelector('.land').contentDocument.getElementById('land');
         const title = document.querySelector('.title');
@@ -84,6 +83,19 @@ document.addEventListener('DOMContentLoaded', () => {
             transform: 'translate(-50%, -50%)'
         });
 
+        gsap.to(meteor_wrapper, {
+            scrollTrigger: {
+                trigger: 'main',
+                start: '40% center',
+                end: '70% center',
+                scrub: true,
+                markers: true
+            },
+            opacity: 0,
+            top: '90%',
+            right: '100%',
+        });
+
         // ANIMATION
 
         meteor_tl = new TimelineMax({ repeat: -1, paused: true, });
@@ -104,17 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const pauseMeteor = () => {
             meteor_tl.pause();
         };
-        
-        /*ScrollTrigger.observe({
-            target: window,
-            type: 'scroll',
-            onUp: () => requestAnimationFrame(reverseMeteor),
-            onDown: () => requestAnimationFrame(playMeteor),
-            onStop: () => requestAnimationFrame(pauseMeteor),
-          });*/
 
-
-          // SPACESHIP
+        // SPACESHIP
 
         ship_tl = new TimelineMax({ repeat: -1, paused: true, });
 
@@ -134,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const pauseShip = () => {
             ship_tl.pause();
         };
-        
+
         ScrollTrigger.observe({
             target: window,
             type: 'scroll',
@@ -150,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 requestAnimationFrame(pauseShip);
                 requestAnimationFrame(pauseMeteor);
             },
-          });
+        });
 
 
     }, false);
