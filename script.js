@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
               this.tl = new TimelineMax({ repeat: -1, paused: true, });
             }
 
-            privateMethod() {
+            init() {
                 this.tl.to(this.frames, +this.frames.dataset.speed, {
                     x: + this.frames.offsetWidth / (+this.frames.dataset.frames / (+this.frames.dataset.frames - 1)),
                     ease: SteppedEase.config(+this.frames.dataset.frames - 1)
