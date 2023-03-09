@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const meteor_wrapper = document.querySelector('.meteor-wrapper');
         const meteor = document.querySelector('.meteor');
 
-        console.log(meteor.dataset)
-
         gsap.set(land, {
             y: '100%'
         });
