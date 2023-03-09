@@ -52,8 +52,13 @@
     0% {
         color: #fff;
     }
+
     50% {
         color: transparent;
+    }
+
+    100% {
+        color: #fff;
     }
 }
 
