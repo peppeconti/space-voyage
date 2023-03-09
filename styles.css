@@ -59,7 +59,7 @@
         font-size: calc(28px + 68 * ((100vw - 280px) / 700));
     }
     .spaceship {
-        width: calc(45px + 55 * ((100vw - 280px) / 700));
+        width: calc(50px + 50 * ((100vw - 280px) / 700));
     }
 }
 
