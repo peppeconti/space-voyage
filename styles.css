@@ -26,12 +26,19 @@
     left: 0;
 }
 
-.spaceship {
+.spaceship-wrapper {
     position: fixed;
     opacity: 0;
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
+    overflow: hidden;
+}
+
+.spaceship {
+    height: 150px;
+    position: absolute;
+    right: 0;
 }
 
 .meteor-wrapper {
@@ -77,18 +84,10 @@
     .title {
         font-size: calc(28px + 68 * ((100vw - 280px) / 700));
     }
-
-    .spaceship {
-        width: calc(50px + 50 * ((100vw - 280px) / 700));
-    }
 }
 
 @media screen and (min-width: 980px) {
     .title {
         font-size: 96px;
-    }
-
-    .spaceship {
-        width: 100px;
     }
 }

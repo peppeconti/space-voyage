@@ -7,9 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
 
         let meteor_tl;
+        let ship_tl
 
         const land = document.querySelector('.land').contentDocument.getElementById('land');
         const title = document.querySelector('.title');
+        const spaceship_wrapper = document.querySelector('.spaceship-wrapper');
         const spaceship = document.querySelector('.spaceship');
         const meteor_wrapper = document.querySelector('.meteor-wrapper');
         const meteor = document.querySelector('.meteor');
@@ -23,6 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.set(meteor_wrapper, {
             width: meteor.offsetWidth / 4,
             height: meteor.offsetHeight
+        });
+
+        gsap.set(spaceship_wrapper, {
+            width: spaceship.offsetWidth / 6,
+            height: spaceship.offsetHeight
         });
 
         gsap.to(land, {
@@ -54,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 0
         });
 
-        gsap.to(spaceship, {
+        gsap.to(spaceship_wrapper, {
             scrollTrigger: {
                 trigger: 'main',
                 start: 'top top',
@@ -65,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 1,
         });
 
-        gsap.to(spaceship, {
+        gsap.to(spaceship_wrapper, {
             scrollTrigger: {
                 trigger: 'main',
                 start: 'top top',
@@ -98,13 +105,53 @@ document.addEventListener('DOMContentLoaded', () => {
             meteor_tl.pause();
         };
         
-        ScrollTrigger.observe({
+        /*ScrollTrigger.observe({
             target: window,
             type: 'scroll',
             onUp: () => requestAnimationFrame(reverseMeteor),
             onDown: () => requestAnimationFrame(playMeteor),
             onStop: () => requestAnimationFrame(pauseMeteor),
+          });*/
+
+
+          // SPACESHIP
+
+        ship_tl = new TimelineMax({ repeat: -1, paused: true, });
+
+        ship_tl.to(spaceship, +spaceship.dataset.speed, {
+            x: + spaceship.offsetWidth / (+spaceship.dataset.frames / (+spaceship.dataset.frames - 1)),
+            ease: SteppedEase.config(+spaceship.dataset.frames - 1)
+        });
+
+        const playShip = () => {
+            ship_tl.play();
+        };
+
+        const reverseShip = () => {
+            ship_tl.reverse();
+        };
+
+        const pauseShip = () => {
+            ship_tl.pause();
+        };
+        
+        ScrollTrigger.observe({
+            target: window,
+            type: 'scroll',
+            onUp: () => {
+                requestAnimationFrame(reverseShip);
+                requestAnimationFrame(reverseMeteor);
+            },
+            onDown: () => {
+                requestAnimationFrame(playShip);
+                requestAnimationFrame(playMeteor);
+            },
+            onStop: () => {
+                requestAnimationFrame(pauseShip);
+                requestAnimationFrame(pauseMeteor);
+            },
           });
+
 
     }, false);
 
