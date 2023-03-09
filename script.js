@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const meteor_wrapper = document.querySelector('.meteor-wrapper');
         const meteor = document.querySelector('.meteor');
 
+        console.log(meteor.dataset)
+
         gsap.set(land, {
             y: '100%'
         });
@@ -94,57 +96,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // ANIMATION
 
-        class Animation {
+        const animate = (frames) => {
+            const tl = new TimelineMax({ repeat: -1, paused: true, });
 
-            constructor(frames) {
-              this.frames = frames;
-              this.tl = new TimelineMax({ repeat: -1, paused: true, });
-            }
+            tl.to(frames, +frames.dataset.speed, {
+                x: + frames.offsetWidth / (+frames.dataset.frames / (+frames.dataset.frames - 1)),
+                ease: SteppedEase.config(+frames.dataset.frames - 1)
+            });
 
-            init() {
-                this.tl.to(this.frames, +this.frames.dataset.speed, {
-                    x: + this.frames.offsetWidth / (+this.frames.dataset.frames / (+this.frames.dataset.frames - 1)),
-                    ease: SteppedEase.config(+this.frames.dataset.frames - 1)
-                });
+            const playFrames = () => {
+                tl.play();
+            };
+            const pauseFrames = () => {
+                tl.pause();
+            };
+            const reverseFrames = () => {
+                tl.reverse();
             };
 
-            playFrames = () => {
-                this.tl.play();
-            };
+            ScrollTrigger.observe({
+                target: window,
+                type: 'scroll',
+                onUp: () => requestAnimationFrame(reverseFrames),
+                onDown: () => requestAnimationFrame(playFrames),
+                onStop: () => requestAnimationFrame(pauseFrames),
+            });
+        };
 
-            reverseFrames = () => {
-                this.tl.reverse();
-            };
-
-            pauseFrames = () => {
-                this.tl.pause();
-            };
-
-          }
-
-        const ship_frames = new Animation(spaceship);
-        const meteor_frames = new Animation(meteor);
-
-        ship_frames.init();
-        meteor_frames.init();
-
-        ScrollTrigger.observe({
-            target: window,
-            type: 'scroll',
-            onUp: () => {
-                requestAnimationFrame(ship_frames.reverseFrames);
-                requestAnimationFrame(meteor_frames.reverseFrames);
-            },
-            onDown: () => {
-                requestAnimationFrame(ship_frames.playFrames);
-                requestAnimationFrame(meteor_frames.playFrames);
-            },
-            onStop: () => {
-                requestAnimationFrame(ship_frames.pauseFrames);
-                requestAnimationFrame(meteor_frames.pauseFrames);
-            },
-        });
+        animate(meteor);
+        animate(spaceship);
 
     }, false);
 
 });
+
+/*class Animation {
+
+    constructor(frames) {
+      this.frames = frames;
+      this.tl = new TimelineMax({ repeat: -1, paused: true, });
+    }
+
+    init() {
+        this.tl.to(this.frames, +this.frames.dataset.speed, {
+            x: + this.frames.offsetWidth / (+this.frames.dataset.frames / (+this.frames.dataset.frames - 1)),
+            ease: SteppedEase.config(+this.frames.dataset.frames - 1)
+        });
+    };
+
+    playFrames = () => {
+        this.tl.play();
+    };
+
+    reverseFrames = () => {
+        this.tl.reverse();
+    };
+
+    pauseFrames = () => {
+        this.tl.pause();
+    };
+
+  }
+
+const ship_frames = new Animation(spaceship);
+const meteor_frames = new Animation(meteor);
+
+ship_frames.init();
+meteor_frames.init();
+
+ScrollTrigger.observe({
+    target: window,
+    type: 'scroll',
+    onUp: () => {
+        requestAnimationFrame(ship_frames.reverseFrames);
+        requestAnimationFrame(meteor_frames.reverseFrames);
+    },
+    onDown: () => {
+        requestAnimationFrame(ship_frames.playFrames);
+        requestAnimationFrame(meteor_frames.playFrames);
+    },
+    onStop: () => {
+        requestAnimationFrame(ship_frames.pauseFrames);
+        requestAnimationFrame(meteor_frames.pauseFrames);
+    },
+});*/
