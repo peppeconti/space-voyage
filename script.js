@@ -99,10 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
             constructor(frames) {
               this.frames = frames;
               this.tl = new TimelineMax({ repeat: -1, paused: true, });
-              this.#privateMethod();
             }
 
-            #privateMethod() {
+            privateMethod() {
                 this.tl.to(this.frames, +this.frames.dataset.speed, {
                     x: + this.frames.offsetWidth / (+this.frames.dataset.frames / (+this.frames.dataset.frames - 1)),
                     ease: SteppedEase.config(+this.frames.dataset.frames - 1)
@@ -125,6 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const ship_frames = new Animation(spaceship);
         const meteor_frames = new Animation(meteor);
+
+        ship_frames.init();
+        meteor_frames.init();
 
         ScrollTrigger.observe({
             target: window,
