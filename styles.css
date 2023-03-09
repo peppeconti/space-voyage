@@ -45,8 +45,8 @@
 .meteor-wrapper {
     position: fixed;
     opacity: 1;
-    top: 0%;
-    right: -20%;
+    top: -5%;
+    right: -5%;
     transform: rotate(155deg);
     overflow: hidden;
 }
