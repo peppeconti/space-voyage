@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             x: 300
         });
 
-        gsap.to(meteor_wrapper, {
+        /*gsap.to(meteor_wrapper, {
             scrollTrigger: {
                 trigger: 'main',
                 start: '40% center',
@@ -48,6 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             opacity: .4,
             x: -(meteors_wrapper.offsetWidth +200),
+        });*/
+
+        gsap.to('[data-speed]', {
+            scrollTrigger: {
+                trigger: 'main',
+                start: '20% center',
+                end: '75% center',
+                scrub: true,
+            },
+            opacity: 0.2,
+            x: (_, el) => (-1 * parseFloat(el.getAttribute('data-speed'))) * (meteors_wrapper.offsetWidth * 3.5),
         });
 
 
@@ -113,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const animate = (frames) => {
             const tl = new TimelineMax({ repeat: -1, paused: true, });
 
-            tl.to(frames, +frames.dataset.speed, {
+            tl.to(frames, +frames.dataset.animation, {
                 x: + frames.offsetWidth / (+frames.dataset.frames / (+frames.dataset.frames - 1)),
                 ease: SteppedEase.config(+frames.dataset.frames - 1)
             });
