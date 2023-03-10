@@ -10,44 +10,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = document.querySelector('.title');
         const spaceship_wrapper = document.querySelector('.spaceship-wrapper');
         const spaceship = document.querySelector('.spaceship');
-        const meteor_wrapper = Array.from(document.querySelectorAll('.meteor-wrapper'));
-        const meteors = Array.from(document.querySelectorAll('.meteor'));
-
-        // ANGLE
-
-        let wind_width = window.innerWidth;
-        let wind_height = window.innerHeight;
-        let angle_deg = Math.atan(wind_height / wind_width) * (-180 / Math.PI);
-
-        console.log(angle_deg);
+        const meteor_wrapper = document.querySelector('.meteor-wrapper');
+        const meteor = document.querySelector('.meteor');
 
         gsap.set(land, {
             y: '100%'
         });
 
-        meteor_wrapper.forEach((e, i) => {
-            gsap.set(e, {
-                width: meteors[0].offsetWidth / 4,
-                height: meteors[0].offsetHeight,
-                top: `calc(0% - ${meteors[0].offsetHeight/2}px)`,
-                right: '0%',
-                transform: `rotate(${angle_deg}deg) scaleX(-1)`,
-                transformOrigin: 'center right'
-            });
 
-            gsap.to(e, {
-                scrollTrigger: {
-                    trigger: 'main',
-                    start: '40% center',
-                    end: '70% center',
-                    scrub: true,
-                    markers: true
-                },
-                opacity: .4,
-                top: `calc(100% - ${meteors[0].offsetHeight/2}px)`,
-                right: `100%`,
-            });
-        })
+        gsap.set(meteor_wrapper, {
+            width: meteor.offsetWidth / +meteor.dataset.frames,
+            height: meteor.offsetHeight,
+            top: '0%',
+            right: `0%`
+        });
+
+        gsap.to(meteor_wrapper, {
+            scrollTrigger: {
+                trigger: 'main',
+                start: '40% center',
+                end: '70% center',
+                scrub: true,
+                //markers: true
+            },
+            opacity: .4,
+            top: `100%`,
+            right: `100%`,
+        });
+
 
         gsap.set(spaceship_wrapper, {
             width: spaceship.offsetWidth / 6,
@@ -148,8 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
+        //animate(meteor);
         animate(spaceship);
-        meteors.forEach(e => animate(e));
+        animate(meteor);
 
     }, false);
 
