@@ -54,7 +54,6 @@
   align-items: end;
 }
 .meteors-wrapper .meteor-wrapper {
-  position: relative;
   opacity: 1;
 }
 .meteors-wrapper .meteor-wrapper .meteor {

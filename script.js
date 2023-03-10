@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             height: meteors[0].offsetHeight,
             scaleX: -1,
             overflow: 'hidden',
+            position: relative;
             x: meteors_wrapper.offsetWidth * 2
         });
 
