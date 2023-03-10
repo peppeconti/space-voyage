@@ -35,6 +35,7 @@
   left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
+
   .spaceship {
     height: 150px;
     position: absolute;
@@ -42,13 +43,13 @@
   }
 }
 
+
 .meteor-wrapper {
   position: fixed;
   opacity: 1;
-  top: -5%;
-  right: -5%;
   transform: rotate(155deg);
   overflow: hidden;
+
   .meteor {
     height: 80px;
     position: absolute;
@@ -56,9 +57,12 @@
   }
 }
 
-/*@for $i from 1 through 3 {
-  ul:nth-child(3n + #{$i}) {
-    background-color: lighten($base-color, $i * 5%);
+/*$distances: -15%, -20%, -25%;
+
+@each $distance in $distances {
+  .r-#{$size} {
+    top: -5%;
+    right: $distance;
   }
 }*/
 
@@ -95,9 +99,11 @@
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }

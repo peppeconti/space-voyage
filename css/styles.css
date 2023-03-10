@@ -42,11 +42,24 @@
   right: 0;
 }
 
+.meteor-wrapper:nth-child(1) {
+  top: -5%;
+  right: -15%;
+}
+
+.meteor-wrapper:nth-child(2) {
+  top: -5%;
+  right: -20%;
+}
+
+.meteor-wrapper:nth-child(3) {
+  top: -5%;
+  right: -25%;
+}
+
 .meteor-wrapper {
   position: fixed;
   opacity: 1;
-  top: -5%;
-  right: -5%;
   transform: rotate(155deg);
   overflow: hidden;
 }
