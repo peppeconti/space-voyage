@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 rotate: angle_deg + 5
             });
         }
-        //rotateMeteors();
+        rotateMeteors();
 
-        //window.addEventListener('resize', rotateMeteors);
+        window.addEventListener('resize', rotateMeteors);
 
         gsap.set(land, {
             y: '100%'
