@@ -10,19 +10,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = document.querySelector('.title');
         const spaceship_wrapper = document.querySelector('.spaceship-wrapper');
         const spaceship = document.querySelector('.spaceship');
-        const meteor_wrapper = document.querySelector('.meteor-wrapper');
-        const meteor = document.querySelector('.meteor');
+        const meteors_wrapper = document.querySelector('.meteors-wrapper');
+        const meteor_wrapper = Array.from(document.querySelectorAll('.meteor-wrapper'));
+        const meteors = Array.from(document.querySelectorAll('.meteor'));
+
+        const rotateMeteors = () => {
+            let wind_width = window.innerWidth;
+            let wind_height = window.innerHeight;
+            let angle_deg = Math.atan(wind_height / wind_width) * (-180 / Math.PI);
+            gsap.set(meteors_wrapper, {
+                rotate: angle_deg + 5
+            });
+        }
+        rotateMeteors();
+
+        window.addEventListener('resize', rotateMeteors);
 
         gsap.set(land, {
             y: '100%'
         });
 
-
         gsap.set(meteor_wrapper, {
-            width: meteor.offsetWidth / +meteor.dataset.frames,
-            height: meteor.offsetHeight,
-            top: '0%',
-            right: `0%`
+            width: meteors[0].offsetWidth / +meteors[0].dataset.frames,
+            height: meteors[0].offsetHeight,
+            scaleX: -1,
+            overflow: 'hidden',
+            x: 300
         });
 
         gsap.to(meteor_wrapper, {
@@ -34,8 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 //markers: true
             },
             opacity: .4,
-            top: `100%`,
-            right: `100%`,
+            x: -(meteors_wrapper.offsetWidth +200),
         });
 
 
@@ -43,19 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
             width: spaceship.offsetWidth / 6,
             height: spaceship.offsetHeight
         });
-
-        /*gsap.to(meteor_wrapper, {
-            scrollTrigger: {
-                trigger: 'main',
-                start: '40% center',
-                end: '70% center',
-                scrub: true,
-                //markers: true
-            },
-            opacity: 0,
-            top: '90%',
-            right: '100%',
-        });*/
 
         gsap.to(land, {
             scrollTrigger: {
@@ -138,9 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        //animate(meteor);
         animate(spaceship);
-        animate(meteor);
+        meteors.forEach(meteor => animate(meteor));
 
     }, false);
 
