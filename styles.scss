@@ -47,8 +47,9 @@
 .meteor-wrapper {
   position: fixed;
   opacity: 1;
-  transform: rotate(155deg);
+  //transform: rotate(155deg);
   overflow: hidden;
+  border: 1px solid red;
 
   .meteor {
     height: 80px;
@@ -56,16 +57,6 @@
     right: 0;
   }
 }
-
-/*$distances: -15%, -20%, -25%;
-
-@each $distance in $distances {
-  .r-#{$size} {
-    top: -5%;
-    right: $distance;
-  }
-}*/
-
 
 @keyframes blink-animation {
   0% {

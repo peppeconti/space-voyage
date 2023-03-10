@@ -12,11 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const spaceship = document.querySelector('.spaceship');
         const meteor_wrapper = Array.from(document.querySelectorAll('.meteor-wrapper'));
         const meteors = Array.from(document.querySelectorAll('.meteor'));
-        const meteor_width = document.querySelector('.meteor').offsetWidth;
-        const meteor_height = document.querySelector('.meteor').offsetHeight;
 
-        console.log(meteor_width, meteor_height);
-        console.log(meteor_wrapper);
+        // ANGLE
+
+        let wind_width = window.innerWidth;
+        let wind_height = window.innerHeight;
+        let angle_deg = Math.atan(wind_height / wind_width) * (-180 / Math.PI);
+
+        console.log(angle_deg);
 
         gsap.set(land, {
             y: '100%'
@@ -24,10 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         meteor_wrapper.forEach((e, i) => {
             gsap.set(e, {
-                width: meteor_width / 4,
-                height: meteor_height,
-                top: '-15%',
-                right: `${15 - (30 * i)}%`
+                width: meteors[0].offsetWidth / 4,
+                height: meteors[0].offsetHeight,
+                top: `calc(0% - ${meteors[0].offsetHeight/2}px)`,
+                right: '0%',
+                transform: `rotate(${angle_deg}deg) scaleX(-1)`,
+                transformOrigin: 'center right'
             });
 
             gsap.to(e, {
@@ -36,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     start: '40% center',
                     end: '70% center',
                     scrub: true,
-                    //markers: true
+                    markers: true
                 },
                 opacity: .4,
-                top: `${40 - (10 * i)}%`,
-                right: `${40 + (10 * i)}%`,
+                top: `calc(100% - ${meteors[0].offsetHeight/2}px)`,
+                right: `100%`,
             });
         })
 
@@ -143,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        //animate(meteor);
         animate(spaceship);
         meteors.forEach(e => animate(e));
 
