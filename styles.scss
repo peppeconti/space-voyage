@@ -57,6 +57,7 @@
   transform: rotate(-45deg);
 
   .meteor-wrapper {
+    position: relative;
     opacity: 1;
     .meteor {
       height: 60px;

@@ -55,6 +55,7 @@
   transform: rotate(-45deg);
 }
 .meteors-wrapper .meteor-wrapper {
+  position: relative;
   opacity: 1;
 }
 .meteors-wrapper .meteor-wrapper .meteor {
