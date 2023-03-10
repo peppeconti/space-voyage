@@ -53,12 +53,10 @@
   justify-content: space-between;
   align-items: end;
   transform: rotate(-45deg);
-  border: 1px solid red;
 }
 .meteors-wrapper .meteor-wrapper {
+  position: relative;
   opacity: 1;
-  transform: scaleX(-1);
-  overflow: "hidden";
 }
 .meteors-wrapper .meteor-wrapper .meteor {
   height: 60px;
