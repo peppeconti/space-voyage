@@ -10,9 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = document.querySelector('.title');
         const spaceship_wrapper = document.querySelector('.spaceship-wrapper');
         const spaceship = document.querySelector('.spaceship');
+        const fires = Array.from(spaceship.contentDocument.querySelectorAll('[data-name=fire]'));
         const meteors_wrapper = document.querySelector('.meteors-wrapper');
         const meteor_wrapper = Array.from(document.querySelectorAll('.meteor-wrapper'));
         const meteors = Array.from(document.querySelectorAll('.meteor'));
+
+        console.log(fires);
 
         const rotateMeteors = () => {
             let wind_width = window.innerWidth;
@@ -119,6 +122,20 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             y: 120,
         });
+
+        fires.forEach(e => {
+
+            gsap.to(e, {
+                scrollTrigger: {
+                    trigger: 'main',
+                    start: '95% 90%',
+                    end: '97.5% 90%',
+                    toggleActions: 'play none reverse none'
+                },
+                display: 'none',
+            });
+
+        })
 
         // ANIMATION
 
