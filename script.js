@@ -33,8 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.set(meteor_wrapper, {
             width: meteors[0].offsetWidth / +meteors[0].dataset.frames,
             height: meteors[0].offsetHeight,
-            scaleX: -1,
-            overflow: 'hidden',
             x: 300
         });
 

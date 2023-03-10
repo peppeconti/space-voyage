@@ -57,6 +57,8 @@
 }
 .meteors-wrapper .meteor-wrapper {
   opacity: 1;
+  transform: scaleX(-1);
+  overflow: "hidden";
 }
 .meteors-wrapper .meteor-wrapper .meteor {
   height: 60px;
