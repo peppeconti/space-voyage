@@ -6,6 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('load', () => {
 
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        } else {
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            }
+        }
+
         const land = document.querySelector('.land').contentDocument.getElementById('land');
         const title = document.querySelector('.title');
         const spaceship_wrapper = document.querySelector('.spaceship-wrapper');
