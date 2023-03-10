@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             height: meteors[0].offsetHeight,
             scaleX: -1,
             overflow: 'hidden',
-            x: 300
+            x: meteor_wrapper.offsetWidth * 1.5
         });
 
         /*gsap.to(meteor_wrapper, {
