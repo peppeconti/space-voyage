@@ -38,18 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
             x: meteors_wrapper.offsetWidth * 1.5
         });
 
-        /*gsap.to(meteor_wrapper, {
-            scrollTrigger: {
-                trigger: 'main',
-                start: '40% center',
-                end: '70% center',
-                scrub: true,
-                //markers: true
-            },
-            opacity: .4,
-            x: -(meteors_wrapper.offsetWidth +200),
-        });*/
-
         gsap.to('[data-speed]', {
             scrollTrigger: {
                 trigger: 'main',
@@ -73,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 start: '70% center',
                 end: '90% center',
                 scrub: true,
-                //markers: true
+                markers: true
             },
             y: '0%',
         });
@@ -117,6 +105,19 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             top: '50%',
             transform: 'translate(-50%, -50%)'
+        });
+
+        // LANDING
+
+        gsap.to(spaceship_wrapper, {
+            scrollTrigger: {
+                trigger: 'main',
+                start: '95% 90%',
+                //end: '50% center',
+                scrub: 2,
+                markers: true
+            },
+            y: 120,
         });
 
         // ANIMATION
