@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 end: '75% center',
                 scrub: true,
             },
-            opacity: 0,
-            x: (_, el) => (-1 * parseFloat(el.getAttribute('data-speed'))) * (meteors_wrapper.offsetWidth * 3),
+            opacity: .8,
+            x: (_, el) => (-1 * parseFloat(el.getAttribute('data-speed'))) * (meteors_wrapper.offsetWidth * 5),
         });
 
 
