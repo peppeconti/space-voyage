@@ -35,8 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             height: meteors[0].offsetHeight,
             scaleX: -1,
             overflow: 'hidden',
-            position: 'relative',
-            x: meteors_wrapper.offsetWidth * 2
+            x: 300
         });
 
         /*gsap.to(meteor_wrapper, {
@@ -58,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 end: '75% center',
                 scrub: true,
             },
-            opacity: 0.2,
-            x: (_, el) => (-1 * parseFloat(el.getAttribute('data-speed'))) * (meteors_wrapper.offsetWidth * 3.5),
+            opacity: 0,
+            x: (_, el) => (-1 * parseFloat(el.getAttribute('data-speed'))) * (meteors_wrapper.offsetWidth * 3),
         });
 
 

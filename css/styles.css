@@ -52,6 +52,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: end;
+  transform: rotate(-45deg);
 }
 .meteors-wrapper .meteor-wrapper {
   opacity: 1;
