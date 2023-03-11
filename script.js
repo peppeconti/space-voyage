@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.set(spaceship, {
                 height: spaceship_frames.offsetHeight,
                 width: spaceship_frames.offsetWidth / spaceship_frames.dataset.frames,
-            });    
+            });
         };
         setResponsive();
 
@@ -45,17 +45,26 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTrigger: {
                 trigger: '.scrollytelling',
                 start: 'top top',
-                end: '30% top',
+                end: 'bottom bottom',
+                invalidateOnRefresh: true,
                 scrub: true,
             },
         });
 
-        tl_departure.to(departure, { opacity: 1, duration: 1 })
-        .to(spaceship, {opacity: 1, duration: 1}, "-=1")
-            .to(departure, { y: '100%', duration: 4 })
-           
-            
-        gsap.to(spaceship, {
+        tl_departure
+            .to(title, {
+                top: '-15%', color: 'transparent', duration: 1, onStart: () => title.classList.remove('blink'),
+                onReverseComplete: () => title.classList.add('blink')
+            })
+            .to(departure, { opacity: 1, duration: 1 }, '-=1')
+            .to(spaceship, { opacity: 1, duration: 1 }, '-=1')
+            .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`, duration: 1 })
+            .to(departure, { y: '100%', duration: 1 }, '-=1')
+            .to(arrive, { y: '0%', duration: 1 }, '+=5')
+            .to(spaceship, { bottom: '0%', duration: 1 })
+
+
+        /*gsap.to(spaceship, {
             scrollTrigger: {
                 trigger: '.scrollytelling',
                 start: '10% top',
@@ -64,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrub: true,
                 //markers: true
             },
-            bottom: () => `calc(50% - ${spaceship.offsetHeight/2}px)`,
+            bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`,
         });
 
         gsap.to(arrive, {
@@ -88,23 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             y: '-60%',
         });*/
-
-        gsap.to(title, {
-            scrollTrigger: {
-                trigger: '.scrollytelling',
-                start: 'top top',
-                end: '10% top',
-                scrub: true,
-                onEnter() {
-                    title.classList.remove('blink');
-                },
-                onLeaveBack() {
-                    title.classList.add('blink');
-                }
-            },
-            top: '-15%',
-            color: 'transparent'
-        });
 
         window.addEventListener('resize', () => {
             setResponsive();
