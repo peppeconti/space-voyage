@@ -1,0 +1,66 @@
+   <div class="meteors-wrapper">
+            <span class="meteor-wrapper" data-speed=".4">
+                <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
+                    height="auto"></object>
+            </span>
+            <span class="meteor-wrapper" data-speed=".45">
+                <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
+                    height="auto"></object>
+            </span>
+            <span class="meteor-wrapper" data-speed=".3">
+                <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
+                    height="auto"></object>
+            </span>
+            <span class="meteor-wrapper" data-speed=".5">
+                <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
+                    height="auto"></object>
+            </span>
+            <span class="meteor-wrapper" data-speed=".2">
+                <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
+                    height="auto"></object>
+            </span>
+        </div>
+        <div class="spaceship-wrapper">
+            <object class="spaceship" data-animation=".6" data-frames="6" data="./img/ship-1.svg" width="auto"
+                height="auto"></object>
+        </div>
+
+
+        .spaceship-wrapper {
+  position: fixed;
+  opacity: 0;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+
+  .spaceship {
+    height: 150px;
+    position: absolute;
+    right: 0;
+  }
+}
+
+
+.meteors-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: end;
+  transform: rotate(-45deg);
+
+  .meteor-wrapper {
+    position: relative;
+    opacity: 1;
+    .meteor {
+      height: 60px;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
