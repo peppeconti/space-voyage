@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             y: '100%'
         });
 
-        const tl_departure = gsap.timeline({
+        const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.scrollytelling',
                 start: 'top top',
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         });
 
-        tl_departure
+        tl
             .to(title, {
                 top: '-15%', color: 'transparent', duration: 1, onStart: () => title.classList.remove('blink'),
                 onReverseComplete: () => title.classList.add('blink')
@@ -62,41 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .to(departure, { y: '100%', duration: 1 }, '-=1')
             .to(arrive, { y: '0%', duration: 1 }, '+=5')
             .to(spaceship, { bottom: '0%', duration: 1 })
-
-
-        /*gsap.to(spaceship, {
-            scrollTrigger: {
-                trigger: '.scrollytelling',
-                start: '10% top',
-                end: 'center top',
-                invalidateOnRefresh: true,
-                scrub: true,
-                //markers: true
-            },
-            bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`,
-        });
-
-        gsap.to(arrive, {
-            scrollTrigger: {
-                trigger: '.scrollytelling',
-                start: '75% center',
-                end: '98% bottom',
-                scrub: true,
-                //markers: true
-            },
-            y: '0%',
-        });
-
-        /*gsap.to(spaceship_wrapper, {
-            scrollTrigger: {
-                trigger: 'main',
-                start: '97% bottom',
-                //end: 'bottom bottom',
-                scrub: true,
-                //markers: true
-            },
-            y: '-60%',
-        });*/
 
         window.addEventListener('resize', () => {
             setResponsive();
