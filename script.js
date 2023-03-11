@@ -54,16 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 start: 'top top',
                 end: '10% top',
                 scrub: true,
-                /*onEnter() {
+                onEnter() {
                     title.classList.remove('blink');
                 },
                 onLeaveBack() {
                     title.classList.add('blink');
-                },*/
-                markers: true
+                }
             },
-            top: '-50%',
-            //opacity: 0
+            top: '-15%',
+            color: 'transparent'
         });
 
     }, false);
