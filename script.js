@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.set(spaceship, {
                 height: spaceship_frames.offsetHeight,
                 width: spaceship_frames.offsetWidth / spaceship_frames.dataset.frames,
-            });
+            });    
         };
         setResponsive();
 
@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         tl_departure.to(departure, { opacity: 1, duration: 1 })
-            .to(spaceship, { opacity: 1, duration: 1 }, "-=1")
+        .to(spaceship, {opacity: 1, duration: 1}, "-=1")
             .to(departure, { y: '100%', duration: 4 })
-
-
+           
+            
         gsap.to(spaceship, {
             scrollTrigger: {
                 trigger: '.scrollytelling',
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrub: true,
                 //markers: true
             },
-            bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`,
+            bottom: () => `calc(50% - ${spaceship.offsetHeight/2}px)`,
         });
 
         gsap.to(arrive, {
