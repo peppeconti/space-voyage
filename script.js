@@ -26,16 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
             y: '100%'
         });
 
-        gsap.to(land_1, {
+        const tl_land_1 = gsap.timeline({
             scrollTrigger: {
-                trigger: 'main',
+                trigger: '.main',
                 start: 'top top',
-                end: '10% top',
+                end: '20% top',
                 scrub: true,
-                //markers: true
             },
-            opacity: 1,
         });
+
+        tl_land_1.to(land_1, { opacity: 1, duration: 1 })
+        .to(land_1, { y: '100%', duration: 1 })
 
         gsap.to(land_2, {
             scrollTrigger: {
