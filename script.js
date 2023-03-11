@@ -14,6 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // EASE 
+
+        const ease1 = Back.easeOut.config(3);
+        const ease2 = Back.easeInOut.config(3);
+
+        // GRAPHIC ELEMENTS
+
         const departure = document.querySelector('.land').contentDocument.getElementById('land-1');
         const arrive = document.querySelector('.land').contentDocument.getElementById('land-2');
         const spaceship = document.querySelector('.spaceship');
@@ -60,8 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .to(spaceship, { opacity: 1, duration: 1 }, '-=1')
             .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`, duration: 1 })
             .to(departure, { y: '100%', duration: 1 }, '-=1')
-            .to(arrive, { y: '0%', duration: 1 }, '+=5')
-            .to(spaceship, { bottom: '0%', duration: 1 })
+            .to(spaceship, { rotate: 5, x: 10, ease: ease1, duration: .5 }, '+=1.5')
+            .to(spaceship, { rotate: 0, x: 0, ease: ease1, duration: .5 })
+            .to(spaceship, { rotate: -5, x: -10, ease: ease1, duration: .5 })
+            .to(spaceship, { rotate: 0, x: 0, ease: ease1,  duration: .5 })
+            .to(arrive, { y: '0%', duration: 1 }, '+=1')
+            .to(spaceship, { bottom: '0%', ease: ease2, duration: 1 })
 
         window.addEventListener('resize', () => {
             setResponsive();
