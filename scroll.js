@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const tl = gsap.timeline({
             scrollTrigger: {
+                id: 'main',
                 trigger: '.scrollytelling',
                 start: 'top top',
                 end: 'bottom bottom',

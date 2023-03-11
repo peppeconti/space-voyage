@@ -22,10 +22,10 @@ const animate = (frames) => {
         target: window,
         type: 'scroll',
         onDown: () => {
-            if (ScrollTrigger.getAll()[0].progress > 0.12) { requestAnimationFrame(playFrames) };
+            if (ScrollTrigger.getById('main').progress > 0.12) { requestAnimationFrame(playFrames) };
         },
         onUp: () => {
-            if (ScrollTrigger.getAll()[0].progress > 0.12) { requestAnimationFrame(reverseFrames) };
+            if (ScrollTrigger.getById('main').progress > 0.12) { requestAnimationFrame(reverseFrames) };
         },
         onStop: () => requestAnimationFrame(pauseFrames),
       });
