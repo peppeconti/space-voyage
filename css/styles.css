@@ -22,10 +22,31 @@
   -moz-animation: blink-animation 1s infinite;
 }
 
-.land {
+.land-wrapper {
   position: fixed;
+  width: 100%;
   bottom: 0;
   left: 0;
+}
+
+.land {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.spaceship-wrapper {
+  top: -60%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+}
+.spaceship-wrapper .spaceship {
+  height: 16vw;
+  position: absolute;
+  right: 0;
 }
 
 @keyframes blink-animation {

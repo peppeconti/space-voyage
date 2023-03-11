@@ -14,11 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        const land = document.querySelector('.land-wrapper');
         const land_1 = document.querySelector('.land').contentDocument.getElementById('land-1');
         const land_2 = document.querySelector('.land').contentDocument.getElementById('land-2');
+        const spaceship_wrapper = document.querySelector('.spaceship-wrapper');
+        const spaceship = document.querySelector('.spaceship');
         const title = document.querySelector('.title');
 
-        gsap.set(land_1, {
+        gsap.set(land, {
+            height: document.querySelector('.land').offsetHeight
+        });
+
+        gsap.set(spaceship_wrapper, {
+            height: spaceship.offsetHeight,
+            width: spaceship.offsetWidth / spaceship.dataset.frames
+        });
+
+        /*gsap.set(land_1, {
             opacity: 0
         });
 
@@ -47,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 //markers: true
             },
             y: '0%',
-        });
+        });*/
 
         gsap.to(title, {
             scrollTrigger: {
