@@ -36,9 +36,6 @@
 }
 
 .spaceship-wrapper {
-  top: -60%;
-  left: 50%;
-  transform: translateX(-50%);
   position: absolute;
   overflow: hidden;
   z-index: 1;
