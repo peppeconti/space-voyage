@@ -9,6 +9,8 @@ $width: 100vw*(1/6.20)*2 - 15.5vw;
 
 html, body {
   overscroll-behavior-y: none;
+  height: 100%;
+  width: 100%;
 }
 
 .title {

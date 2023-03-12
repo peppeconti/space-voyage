@@ -14,43 +14,41 @@
 </head>
 
 <body>
-    <div class="main-wrapper">
-        <main class="scrollytelling">
-            <h1 class="title blink">Space Voyage</h1>
-            <object class="sky" data="./img/sky.svg" width="auto" height="auto"></object>
-            <object class="land" data="./img/land.svg" width="auto" height="auto"></object>
-            <!-- Meteors -->
-            <div class="meteors-wrapper">
-                <p class="meteor-wrapper" data-speed=".35">
-                    <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
-                        height="auto"></object>
-                </p>
-                <p class="meteor-wrapper" data-speed=".45">
-                    <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
-                        height="auto"></object>
-                </p>
-                <p class="meteor-wrapper" data-speed=".35">
-                    <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
-                        height="auto"></object>
-                </p>
-                <p class="meteor-wrapper" data-speed=".4">
-                    <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
-                        height="auto"></object>
-                </p>
-                <p class="meteor-wrapper" data-speed=".35">
-                    <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
-                        height="auto"></object>
-                </p>
+    <main class="scrollytelling">
+        <h1 class="title blink">Space Voyage</h1>
+        <object class="sky" data="./img/sky.svg" width="auto" height="auto"></object>
+        <object class="land" data="./img/land.svg" width="auto" height="auto"></object>
+        <!-- Meteors -->
+        <div class="meteors-wrapper">
+            <p class="meteor-wrapper" data-speed=".35">
+                <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
+                    height="auto"></object>
+            </p>
+            <p class="meteor-wrapper" data-speed=".45">
+                <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
+                    height="auto"></object>
+            </p>
+            <p class="meteor-wrapper" data-speed=".35">
+                <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
+                    height="auto"></object>
+            </p>
+            <p class="meteor-wrapper" data-speed=".4">
+                <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
+                    height="auto"></object>
+            </p>
+            <p class="meteor-wrapper" data-speed=".35">
+                <object class="meteor" data-animation=".6" data-frames="4" data="./img/meteor.svg" width="auto"
+                    height="auto"></object>
+            </p>
+        </div>
+        <!-- Spaceship -->
+        <div class="spaceship-wrapper">
+            <div class="spaceship">
+                <object class="spaceship-frames" data-animation=".6" data-frames="6" data="./img/Asset.svg" width="auto"
+                    height="auto"></object>
             </div>
-            <!-- Spaceship -->
-            <div class="spaceship-wrapper">
-                <div class="spaceship">
-                    <object class="spaceship-frames" data-animation=".6" data-frames="6" data="./img/Asset.svg"
-                        width="auto" height="auto"></object>
-                </div>
-            </div>
-        </main>
-    </div>
+        </div>
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script type="module" src="scroll.js"></script>
