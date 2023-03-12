@@ -57,17 +57,28 @@
   right: 0;
 }
 
-/*.spaceship-wrapper {
-  position: absolute;
-  overflow: hidden;
-  z-index: 1;
+/*.meteors-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  height: 100vh;
+  width: 100vw;
+  border: 5px solid red;
 
-  .spaceship {
-    height: 16vw;
-    position: absolute;
-    right: 0
-  }
+    .meteor-wrapper {
+      overflow: hidden;
+      border: 1px solid green;
 
+      .meteor {
+        height: 70px;
+        transform: scale(-1);
+      }
+    }
 }*/
 @keyframes blink-animation {
   0% {

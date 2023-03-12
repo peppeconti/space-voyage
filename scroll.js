@@ -27,9 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const arrive = document.querySelector('.land').contentDocument.getElementById('land-2');
         const spaceship = document.querySelector('.spaceship');
         const spaceship_frames = document.querySelector('.spaceship-frames');
-        //const fires = Array.from(spaceship.contentDocument.querySelectorAll('[data-name=fire]'));
+        //const meteor_wrapper = Array.from(document.querySelectorAll('.meteor-wrapper'));
         const title = document.querySelector('.title');
 
+
+        //const fires = Array.from(spaceship.contentDocument.querySelectorAll('[data-name=fire]'));
         /*gsap.set(fires, {
             display: 'none'
         });*/
@@ -39,6 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 height: spaceship_frames.offsetHeight,
                 width: spaceship_frames.offsetWidth / spaceship_frames.dataset.frames,
             });
+            /*meteor_wrapper.forEach(e => {
+                gsap.set(e, {
+                    height: e.querySelector('.meteor').offsetHeight,
+                    width: e.querySelector('.meteor').offsetWidth / e.querySelector('.meteor').dataset.frames
+                })
+            })*/
         };
         setResponsive();
 
@@ -72,10 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
             .to(departure, { y: '100%', duration: 1 }, '-=1')
             .to(spaceship, { rotate: 5, x: 10, ease: ease1, duration: .5 }, '+=1.5')
             .to(spaceship, { rotate: 0, x: 0, ease: ease1, duration: .5 })
-            .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2 + 50}px)`, ease: ease2,  duration: 1 }, '-=1')
+            .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2 + 50}px)`, ease: ease2, duration: 1 }, '-=1')
             .to(spaceship, { rotate: -5, x: -25, ease: ease1, duration: 1 })
             .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`, ease: ease2, duration: .5 }, '-=1')
-            .to(spaceship, { rotate: 0, x: 0, ease: ease1,  duration: .5 })
+            .to(spaceship, { rotate: 0, x: 0, ease: ease1, duration: .5 })
             .to(arrive, { y: '0%', duration: 1 }, '+=.5')
             .to(spaceship, { bottom: '0%', ease: ease2, duration: 1 })
 
