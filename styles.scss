@@ -7,8 +7,7 @@ $width: 100vw*(1/6.20)*2 - 15.5vw;
   font-family: 'Wallpoet', cursive;
 }
 
-html, body {
-  overscroll-behavior-y: none;
+html, body, #root {
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -25,7 +24,7 @@ html, body {
 }
 
 .scrollytelling {
-  
+
 }
 
 .title {
