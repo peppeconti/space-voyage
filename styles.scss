@@ -8,6 +8,7 @@ $width: 100vw*(1/6.20)*2 - 15.5vw;
 }
 
 html, body, #root {
+  position: fixed;
   height: 100%;
   width: 100%;
   overflow: hidden;
