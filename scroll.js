@@ -38,25 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
             display: 'none'
         });*/
 
-        const rotateMeteors = () => {
-            let wind_width = window.innerWidth;
-            let wind_height = window.innerHeight;
-            let angle_deg = Math.atan(wind_height / wind_width) * (-180 / Math.PI);
-            gsap.set(meteors_wrapper, {
-                rotate: angle_deg + 5,
-                y: -100
-            });
-        }
+        const setResponsiveValues = async () => {
 
-        const setResponsive = () => {
-            gsap.set(spaceship, {
+            await gsap.set(spaceship, {
                 height: spaceship_frames.offsetHeight,
                 width: spaceship_frames.offsetWidth / spaceship_frames.dataset.frames,
             })
-        };
 
-        const setResponsive2 = () => {
-            gsap.set(meteor_wrapper, {
+            await gsap.set(meteor_wrapper, {
                 width: (_, el) => el.querySelector('.meteor').offsetWidth / el.querySelector('.meteor').dataset.frames,
                 height: (_, el) => el.querySelector('.meteor').offsetHeight,
                 scaleX: -1,
@@ -64,7 +53,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 position: 'relative'
                 //x: window.innerWidth * 1.5
             });
-        };
+
+            let wind_width = window.innerWidth;
+            let wind_height = window.innerHeight;
+            let angle_deg = Math.atan(wind_height / wind_width) * (-180 / Math.PI);
+
+            await gsap.set(meteors_wrapper, {
+                rotate: angle_deg + 5,
+                y: -100
+            });
+        }
+
+        setResponsiveValues();
 
         gsap.set([departure, spaceship], {
             opacity: 0
@@ -84,10 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrub: true,
             },
         });
-
-        setResponsive();
-        setResponsive2();
-        rotateMeteors();
 
         /*gsap.to('[data-speed]', {
             scrollTrigger: {
@@ -119,9 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .to(spaceship, { bottom: '0%', ease: ease2, duration: 1 })
 
         window.addEventListener('resize', () => {
-            setResponsive();
-            setResponsive2();
-            rotateMeteors();
+            setResponsiveValues();
             ScrollTrigger.refresh();
         });
 
