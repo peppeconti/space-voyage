@@ -6,10 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('DOM loaded');
 
-    document.ontouchmove = function(e) {
-        e.preventDefault();
-    }
-
     window.addEventListener('load', () => {
 
         if (history.scrollRestoration) {

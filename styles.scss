@@ -7,6 +7,18 @@ $width: 100vw*(1/6.20)*2 - 15.5vw;
   font-family: 'Wallpoet', cursive;
 }
 
+html, body {
+  position: fixed;
+  overflow: hidden;
+}
+
+body > .main-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 .title {
   position: fixed;
   top: 50%;
