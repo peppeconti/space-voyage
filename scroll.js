@@ -16,32 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        const title = document.querySelector('.title');
-        const scroller = document.querySelector('.main-wrapper');
-        const main = document.querySelector('main.scrollytelling');
-
         console.log(main)
 
-        gsap.to(title, {
-            scrollTrigger: {
-                id: 'main',
-                scroller: scroller,
-                trigger: main,
-                start: '150px top',
-                end: 'center center',
-                invalidateOnRefresh: true,
-                scrub: true,
-                markers: true
-            },
-            x: 100
-        });
-
-        /*// EASE 
+        // EASE 
 
         const ease1 = Back.easeOut.config(3);
         const ease2 = Back.easeInOut.config(3);
 
         // GRAPHIC ELEMENTS
+
+        const scroller = document.querySelector('.main-wrapper');
+        const main = document.querySelector('main.scrollytelling');
 
         const departure = document.querySelector('.land').contentDocument.getElementById('land-1');
         const arrive = document.querySelector('.land').contentDocument.getElementById('land-2');
@@ -87,7 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 id: 'main',
-                trigger: '.scrollytelling',
+                scroller: scroller,
+                trigger: main,
                 start: 'top top',
                 end: 'bottom bottom',
                 invalidateOnRefresh: true,
@@ -120,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         animate(spaceship_frames);
-        meteors.forEach(meteor => animate(meteor));*/
+        meteors.forEach(meteor => animate(meteor));
 
     }, false);
 
