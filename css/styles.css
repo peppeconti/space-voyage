@@ -9,6 +9,17 @@ html, body {
   overscroll-behavior-y: none;
   height: 100%;
   width: 100%;
+  overflow: hidden;
+}
+
+.main-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  z-index: 10;
 }
 
 .title {

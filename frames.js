@@ -28,7 +28,7 @@ const animate = (frames) => {
     };
 
     Observer.create({
-        target: window,
+        target: '.main-wrapper',
         type: 'scroll',
         onDown: () => {
             if (ScrollTrigger.getById('main').progress > 0.12) { requestAnimationFrame(playFrames) };

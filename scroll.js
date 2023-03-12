@@ -62,9 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setResponsiveValues();
 
-        gsap.set([departure, spaceship], {
+        /*gsap.set([departure, spaceship], {
             opacity: 0
-        });
+        });*/
 
         gsap.set(arrive, {
             y: '100%'
@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 end: 'bottom bottom',
                 invalidateOnRefresh: true,
                 scrub: true,
+                markers: true
             },
         });
 
