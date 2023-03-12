@@ -9,7 +9,7 @@ $width: 100vw*(1/6.20)*2 - 15.5vw;
 
 html, body, #root {
   position: fixed;
-  overflow: hidden;
+  overflow: auto;
   overscroll-behavior: none;
 }
 
@@ -17,7 +17,7 @@ body > .main-wrapper {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  overflow-y: scroll;
+  overflow: auto;
   -webkit-overflow-scrolling: touch; /* enables “momentum” (smooth) scrolling */
 }
 
