@@ -14,12 +14,9 @@ html, body, #root {
   overflow: hidden;
 }
 
-.main-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+body > .main-wrapper {
+  height: 100vh;
+  width: 100vw;
   overflow-y: scroll;
   z-index: 10;
 }
