@@ -16,7 +16,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // EASE 
+        const title = document.querySelector('.title');
+        const scroller = document.querySelector('.main-wrapper');
+        const main = document.querySelector('main.scrollytelling');
+
+        console.log(main)
+
+        gsap.to(title, {
+            scrollTrigger: {
+                id: 'main',
+                scroller: scroller,
+                trigger: main,
+                start: '150px top',
+                end: 'center center',
+                invalidateOnRefresh: true,
+                scrub: true,
+                markers: true
+            },
+            x: 100
+        });
+
+        /*// EASE 
 
         const ease1 = Back.easeOut.config(3);
         const ease2 = Back.easeInOut.config(3);
@@ -31,12 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const meteor_wrapper = Array.from(document.querySelectorAll('.meteor-wrapper'));
         const meteors = Array.from(document.querySelectorAll('.meteor'));
         const title = document.querySelector('.title');
-
-
-        //const fires = Array.from(spaceship.contentDocument.querySelectorAll('[data-name=fire]'));
-        /*gsap.set(fires, {
-            display: 'none'
-        });*/
 
         const setResponsiveValues = async () => {
 
@@ -62,9 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setResponsiveValues();
 
-        /*gsap.set([departure, spaceship], {
+        gsap.set([departure, spaceship], {
             opacity: 0
-        });*/
+        });
 
         gsap.set(arrive, {
             y: '100%'
@@ -78,20 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 end: 'bottom bottom',
                 invalidateOnRefresh: true,
                 scrub: true,
-                markers: true
             },
         });
-
-        /*gsap.to('[data-speed]', {
-            scrollTrigger: {
-                trigger: '.scrollytelling',
-                start: '40% center',
-                end: '85% center',
-                scrub: true,
-            },
-            opacity: .5,
-            x: (_, el) => (-1 * parseFloat(el.getAttribute('data-speed'))) * (meteors_wrapper.offsetWidth * 5),
-        });*/
 
         tl
             .to(title, {
@@ -118,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         animate(spaceship_frames);
-        meteors.forEach(meteor => animate(meteor));
+        meteors.forEach(meteor => animate(meteor));*/
 
     }, false);
 
