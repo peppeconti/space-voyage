@@ -6,7 +6,7 @@
   font-family: "Wallpoet", cursive;
 }
 
-html, body, #root {
+html, body {
   position: fixed;
   overflow: hidden;
   overscroll-behavior: none;
