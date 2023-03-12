@@ -59,19 +59,21 @@
 
 .meteors-wrapper {
   position: fixed;
-  top: 0;
+  top: 0%;
   right: 0%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: end;
-  flex-wrap: wrap;
-  gap: 15vh;
+  gap: 10vh;
   height: 100vh;
-  width: auto;
+  width: 100vw;
+  border: 1px solid red;
 }
 .meteors-wrapper .meteor-wrapper {
   position: relative;
+  transform: scale(-1);
+  overflow: hidden;
   border: 1px solid red;
 }
 .meteors-wrapper .meteor-wrapper .meteor {

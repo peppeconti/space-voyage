@@ -48,10 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             await gsap.set(meteor_wrapper, {
                 width: (_, el) => el.querySelector('.meteor').offsetWidth / el.querySelector('.meteor').dataset.frames,
                 height: (_, el) => el.querySelector('.meteor').offsetHeight,
-                scaleX: -1,
-                overflow: 'hidden',
-                position: 'relative'
-                //x: window.innerWidth * 1.5
+                x: meteors_wrapper.offsetWidth * 1.5
             });
 
             let wind_width = window.innerWidth;
@@ -59,8 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let angle_deg = Math.atan(wind_height / wind_width) * (-180 / Math.PI);
 
             await gsap.set(meteors_wrapper, {
-                rotate: angle_deg + 5,
-                y: -100
+                rotate: angle_deg + 5
             });
         }
 
@@ -87,13 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         /*gsap.to('[data-speed]', {
             scrollTrigger: {
-                trigger: 'main',
+                trigger: '.scrollytelling',
                 start: '40% center',
                 end: '85% center',
                 scrub: true,
             },
-            opacity: .8,
-            x: (_, el) => (-1 * parseFloat(el.getAttribute('data-speed'))) * (window.innerWidth * 5),
+            opacity: .5,
+            x: (_, el) => (-1 * parseFloat(el.getAttribute('data-speed'))) * (meteors_wrapper.offsetWidth * 5),
         });*/
 
         tl
@@ -105,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .to(spaceship, { opacity: 1, duration: 1 }, '-=1')
             .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`, duration: 1 })
             .to(departure, { y: '100%', duration: 1 }, '-=1')
+            .to('[data-speed]', { opacity: .5, x: (_, el) => (-1 * parseFloat(el.dataset.speed)) * (meteors_wrapper.offsetWidth * 5) })
             .to(spaceship, { rotate: 5, x: 10, ease: ease1, duration: .5 }, '+=1.5')
             .to(spaceship, { rotate: 0, x: 0, ease: ease1, duration: .5 })
             .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2 + 50}px)`, ease: ease2, duration: 1 }, '-=1')
