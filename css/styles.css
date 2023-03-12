@@ -8,7 +8,7 @@
 
 html, body, #root {
   position: fixed;
-  overflow: auto;
+  overflow: hidden;
   overscroll-behavior: none;
 }
 

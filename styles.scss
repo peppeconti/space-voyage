@@ -9,7 +9,7 @@ $width: 100vw*(1/6.20)*2 - 15.5vw;
 
 html, body, #root {
   position: fixed;
-  overflow: auto;
+  overflow: hidden;
   overscroll-behavior: none;
 }
 
