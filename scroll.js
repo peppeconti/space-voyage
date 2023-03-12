@@ -16,8 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        console.log(main)
-
         // EASE 
 
         const ease1 = Back.easeOut.config(3);
@@ -78,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 end: 'bottom bottom',
                 invalidateOnRefresh: true,
                 scrub: true,
+                markers: true
             },
         });
 
@@ -107,6 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         animate(spaceship_frames);
         meteors.forEach(meteor => animate(meteor));
+
+        console.log(ScrollTrigger.getAll())
 
     }, false);
 
