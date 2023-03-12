@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 height: spaceship_frames.offsetHeight,
                 width: spaceship_frames.offsetWidth / spaceship_frames.dataset.frames,
             });
+            //anim = animate(spaceship_frames);
             /*meteor_wrapper.forEach(e => {
                 gsap.set(e, {
                     height: e.querySelector('.meteor').offsetHeight,
@@ -90,11 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', () => {
             setResponsive();
             ScrollTrigger.refresh();
+            //console.log(spaceship_frames.offsetWidth)
         });
 
         animate(spaceship_frames);
-
-        console.log(ScrollTrigger.getAll());
 
     }, false);
 
