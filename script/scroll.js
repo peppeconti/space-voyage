@@ -1,6 +1,5 @@
 import { animate } from './frames.js';
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(Observer);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Observer);
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -33,8 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const meteors = Array.from(document.querySelectorAll('.meteor'));
         const title = document.querySelector('.title');
         const to_top = document.querySelector('.scroll_to_top');
-
-        const scrollToTop = () => uss.scrollYTo(0, window);
 
         const setResponsiveValues = async () => {
 
@@ -115,7 +112,17 @@ document.addEventListener('DOMContentLoaded', () => {
             ScrollTrigger.refresh();
         });
 
-        to_top.addEventListener('click', scrollToTop);
+        to_top.addEventListener('click', function () {
+
+            gsap.to(window, { duration: 35, scrollTo: { y: main.offsetHeight } });
+
+        });
+
+        /*to_bottom.addEventListener('click', function () {
+
+            gsap.to(window, { duration: 0.2, scrollTo: { y: 0 } });
+
+        })*/
 
         animate(spaceship_frames);
         meteors.forEach(meteor => animate(meteor));
