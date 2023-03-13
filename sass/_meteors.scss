@@ -1,0 +1,27 @@
+.meteors-wrapper {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 10vh;
+    height: 100vh;
+    width: 100vw;
+    //border: 1px solid red;
+
+    .meteor-wrapper {
+        position: relative;
+        transform: scale(-1);
+        overflow: hidden;
+        //border: 1px solid red;
+
+        .meteor {
+            position: absolute;
+            height: 70px;
+            top: 0;
+            right: 0;
+        }
+    }
+}
