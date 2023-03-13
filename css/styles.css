@@ -15,7 +15,7 @@ body > .main-wrapper {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .title {
