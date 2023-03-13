@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .to(departure, { y: '100%', duration: 1 }, '-=1')
             // 6 UNITS
             .to('[data-speed]', { opacity: .5, duration: 5, x: (_, el) => (-1 * parseFloat(el.dataset.speed)) * (meteors_wrapper.offsetWidth * 5), onStart: () => console.log('start'), onComplete: () => console.log('complete') }, '+=1')
+            // OVERLAPS 2 + 3.9 UNITS
             .add(nested_tl, '-=3.9')
             // 2 UNIT
             .to(arrive, { y: '0%', duration: 1 }, '+=1')
