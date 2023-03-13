@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const meteor_wrapper = Array.from(document.querySelectorAll('.meteor-wrapper'));
         const meteors = Array.from(document.querySelectorAll('.meteor'));
         const title = document.querySelector('.title');
+        const to_top = document.querySelector('.scroll_to_top');
+
+        const scrollToTop = () => uss.scrollYTo(0, window);
 
         const setResponsiveValues = async () => {
 
@@ -111,6 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
             setResponsiveValues();
             ScrollTrigger.refresh();
         });
+
+        to_top.addEventListener('click', scrollToTop);
 
         animate(spaceship_frames);
         meteors.forEach(meteor => animate(meteor));
