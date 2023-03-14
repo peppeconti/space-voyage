@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             await gsap.set(meteor_wrapper, {
                 width: (_, el) => el.querySelector('.meteor').offsetWidth / el.querySelector('.meteor').dataset.frames,
                 height: (_, el) => el.querySelector('.meteor').offsetHeight,
-                x: '100%'
+                x: 0
             });
 
             let wind_width = window.innerWidth;
