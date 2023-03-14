@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             await gsap.set(meteor_wrapper, {
                 width: (_, el) => el.querySelector('.meteor').offsetWidth / el.querySelector('.meteor').dataset.frames,
                 height: (_, el) => el.querySelector('.meteor').offsetHeight,
-                x: meteors_wrapper.offsetWidth * 1.5
+                x: '100%'
             });
 
             let wind_width = window.innerWidth;
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         to_top.addEventListener('click', function () {
 
-            gsap.to(window, { duration: 50, scrollTo: { y: 'max', autoKill: true }});
+            gsap.to(window, { duration: 30, scrollTo: { y: 'max', autoKill: true }});
 
         });
 

@@ -9,13 +9,13 @@
     gap: 10vh;
     height: 100vh;
     width: 100vw;
-    //border: 1px solid red;
+    border: 1px solid red;
 
     .meteor-wrapper {
         position: relative;
         transform: scale(-1);
         overflow: hidden;
-        //border: 1px solid red;
+        border: 1px solid red;
 
         .meteor {
             position: absolute;
