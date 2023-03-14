@@ -5,19 +5,43 @@
     gap: 10vh;
     height: 100vh;
     width: 100vw;
-    border: 1px solid red;
 
     .meteor-wrapper {
         position: relative;
         transform: scale(-1);
         overflow: hidden;
-        border: 1px solid red;
 
         .meteor {
             position: absolute;
             height: 5vw;
             top: 0;
             right: 0;
+        }
+    }
+}
+
+// FLUID TYPOGRAPHY
+
+@media screen and (min-width: 280px) {
+    .meteors-wrapper {
+
+        .meteor-wrapper {
+
+            .meteor {
+                height: calc(30px + 40 * ((100vw - 280px) / 700));
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 980px) {
+    .meteors-wrapper {
+
+        .meteor-wrapper {
+
+            .meteor {
+                height: 70px;
+            }
         }
     }
 }
