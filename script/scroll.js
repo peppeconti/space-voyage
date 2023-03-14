@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         to_top.addEventListener('click', function () {
 
-            gsap.to(window, { duration: 80, scrollTo: { y: 'max', autoKill: true }});
+            gsap.to(window, { duration: 120, scrollTo: { y: 'max', autoKill: true }});
 
         });
 
