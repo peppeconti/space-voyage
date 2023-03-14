@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             await gsap.set(meteor_wrapper, {
                 width: (_, el) => el.querySelector('.meteor').offsetWidth / el.querySelector('.meteor').dataset.frames,
                 height: (_, el) => el.querySelector('.meteor').offsetHeight,
-                x: 0
+                x: '200%'
             });
 
             let wind_width = window.innerWidth;
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 6 UNITS
             .to('[data-speed]', { opacity: .5, duration: 5, x: (_, el) => (-1 * parseFloat(el.dataset.speed)) * (meteors_wrapper.offsetWidth * 5), onStart: () => console.log('start'), onComplete: () => console.log('complete') }, '+=1')
             // OVERLAPS 2 + 3.9 UNITS
-            .add(nested_tl, '-=3.9')
+            .add(nested_tl, '-=4.8')
             // 2 UNIT
             .to(arrive, { y: '0%', duration: 1 }, '+=1')
             // .5 UNIT
