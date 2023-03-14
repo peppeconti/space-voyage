@@ -112,13 +112,6 @@ body {
   right: 0;
 }
 
-.scrollytelling {
-  position: relative;
-  height: 15000px;
-  width: 100%;
-  background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(16, 123, 126, 0.7539390756) 41%, rgb(0, 175, 174) 100%);
-}
-
 .scroll_to_top {
   position: fixed;
   bottom: 1rem;
@@ -128,9 +121,9 @@ body {
   cursor: pointer;
 }
 
-#bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
+.scrollytelling {
+  position: relative;
+  height: 15000px;
+  width: 100%;
+  background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(16, 123, 126, 0.7539390756) 41%, rgb(0, 175, 174) 100%);
 }/*# sourceMappingURL=styles.css.map */
