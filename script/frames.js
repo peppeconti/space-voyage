@@ -31,7 +31,7 @@ const animate = (frames) => {
         target: window,
         type: 'scroll',
         onDown: () => {
-            if (ScrollTrigger.getById('main').progress > 0.063 && ScrollTrigger.getById('main').progress < 1) { requestAnimationFrame(playFrames) };
+            if (ScrollTrigger.getById('main').progress > 0.063 && ScrollTrigger.getById('main').progress < 0.99) { requestAnimationFrame(playFrames) };
         },
         //onUp: () => requestAnimationFrame(reverseFrames),
         onStop: () => requestAnimationFrame(pauseFrames)

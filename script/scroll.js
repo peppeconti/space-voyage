@@ -115,9 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         to_top.addEventListener('click', function () {
 
-            console.log(main.offsetHeight, main.offsetTop)
-
-            gsap.to(window, {duration: 80, scrollTo:"#bottom"});
+            gsap.to(window, {duration: 80, scrollTo: 'max'});
 
         });
 
