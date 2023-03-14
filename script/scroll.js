@@ -51,7 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
             let angle_deg = Math.atan(wind_height / wind_width) * (-180 / Math.PI);
 
             await gsap.set(meteors_wrapper, {
-                rotate: angle_deg + 5
+                rotate: angle_deg + 5,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'flex.end'
             });
         };
 
