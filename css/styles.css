@@ -113,6 +113,7 @@ body {
 }
 
 .scrollytelling {
+  position: relative;
   height: 15000px;
   width: 100%;
   background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(16, 123, 126, 0.7539390756) 41%, rgb(0, 175, 174) 100%);
@@ -125,4 +126,11 @@ body {
   padding: 1rem;
   background-color: #fff;
   cursor: pointer;
+}
+
+#bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
 }/*# sourceMappingURL=styles.css.map */
