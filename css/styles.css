@@ -105,7 +105,7 @@ body {
 }
 .meteors-wrapper .meteor-wrapper .meteor {
   position: absolute;
-  height: 70px;
+  height: 5vw;
   top: 0;
   right: 0;
 }
