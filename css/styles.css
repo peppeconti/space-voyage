@@ -119,4 +119,15 @@ body {
   height: 15000px;
   width: 100%;
   background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(16, 123, 126, 0.7539390756) 41%, rgb(0, 175, 174) 100%);
+}
+
+.single-meteor {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8vw;
+  height: 8vw;
+  background-color: red;
+  border-radius: 20%;
 }/*# sourceMappingURL=styles.css.map */

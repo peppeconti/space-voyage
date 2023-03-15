@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const meteor_wrapper = Array.from(document.querySelectorAll('.meteor-wrapper'));
         const meteors = Array.from(document.querySelectorAll('.meteor'));
         const title = document.querySelector('.title');
+        const meteor = document.querySelector('.single-meteor');
         //const to_top = document.querySelector('.scroll_to_top');
         //const to_bottom = document.querySelector('.scroll_to_bottom');
 
@@ -79,6 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`, ease: ease2, duration: .5 }, '-=1')
             .to(spaceship, { rotate: 0, x: 0, ease: ease1, duration: .5 });
 
+        const nested_tl_2 = gsap.timeline()
+            .to(meteor, { rotate: 360, y: 1000, duration: 2 })
+            .to(spaceship, {x: 150, rotate: 10, ease: ease1, duration: 1 }, '-=1.95')
+            .to(spaceship, {x: 0, ease: ease1, duration: 2 } , '-=1.5')
+            .to(spaceship, {rotate: 0, ease: ease1, duration: 1 } , '-=2')
+
         // MAIN TIMELINE
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -108,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .to('[data-speed]', { opacity: .5, duration: 5, x: (_, el) => (-1 * parseFloat(el.dataset.speed)) * (meteors_wrapper.offsetWidth * 5), onStart: () => console.log('start'), onComplete: () => console.log('complete') }, '+=1')
             // OVERLAPS
             .add(nested_tl, '-=4.6')
+            .add(nested_tl_2)
             // 2 UNIT
             .to(arrive, { y: '0%', duration: 1 }, '+=1')
             // .5 UNIT
