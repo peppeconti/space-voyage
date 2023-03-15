@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const meteor_wrapper = Array.from(document.querySelectorAll('.meteor-wrapper'));
         const meteors = Array.from(document.querySelectorAll('.meteor'));
         const title = document.querySelector('.title');
-        const meteor = document.querySelector('.single-meteor');
+        const asteroid = document.querySelector('.asteroid');
         //const to_top = document.querySelector('.scroll_to_top');
         //const to_bottom = document.querySelector('.scroll_to_bottom');
 
@@ -81,16 +81,16 @@ document.addEventListener('DOMContentLoaded', () => {
             .to(spaceship, { rotate: 0, x: 0, ease: ease1, duration: .5 });
 
         const nested_tl_2 = gsap.timeline()
-            .to(meteor, { rotate: 360, y: 1000, duration: 2 })
-            .to(spaceship, { x: 150, rotate: 10, ease: ease1, duration: 1 }, '-=1.95')
-            .to(spaceship, { x: 0, ease: ease1, duration: 2 }, '-=1.5')
+            .to(asteroid, { rotate: 360, top: '100%', bottom: '0%', duration: 2 })
+            .to(spaceship, { left: '70%', rotate: 10, ease: ease1, duration: 1 }, '-=1.85')
+            .to(spaceship, { left: '50%', ease: ease1, duration: 2 }, '-=.5')
             .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, '-=2')
-            .set(meteor, { y: -100, rotate: 0 })
+            .set(asteroid, { top: '0%', bottom: '100%', rotate: 0 })
 
         const nested_tl_3 = gsap.timeline()
-            .to(meteor, { rotate: 360, y: 1000, duration: 2 })
-            .to(spaceship, { x: -150, rotate: -10, ease: ease1, duration: 1 }, '-=1.95')
-            .to(spaceship, { x: 0, ease: ease1, duration: 2 }, '-=1.5')
+            .to(asteroid, { rotate: 360, top: '100%', bottom: '0%', duration: 2 })
+            .to(spaceship, { left: '30%', rotate: -10, ease: ease1, duration: 1 }, '-=1.95')
+            .to(spaceship, { left: '50%', ease: ease1, duration: 2 }, '-=.5')
             .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, '-=2')
 
         // MAIN TIMELINE

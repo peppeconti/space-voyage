@@ -121,13 +121,20 @@ body {
   background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(16, 123, 126, 0.7539390756) 41%, rgb(0, 175, 174) 100%);
 }
 
-.single-meteor {
+.asteroid-wrapper {
   position: fixed;
-  top: -100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid red;
+}
+.asteroid-wrapper .asteroid {
+  position: absolute;
+  top: -8vw;
   left: 50%;
   transform: translateX(-50%);
   width: 8vw;
   height: 8vw;
   background-color: red;
-  border-radius: 20%;
 }/*# sourceMappingURL=styles.css.map */
