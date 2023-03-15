@@ -113,14 +113,6 @@ body {
     height: 70px;
   }
 }
-.scrollytelling {
-  position: absolute;
-  top: 0;
-  height: 15000px;
-  width: 100%;
-  background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(16, 123, 126, 0.7539390756) 41%, rgb(0, 175, 174) 100%);
-}
-
 .asteroid-wrapper {
   position: fixed;
   top: 0;
@@ -135,4 +127,10 @@ body {
   transform: translateX(-50%);
   width: 8vw;
   height: 8vw;
+}
+
+.scrollytelling {
+  height: 15000px;
+  width: 100%;
+  background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(16, 123, 126, 0.7539390756) 41%, rgb(0, 175, 174) 100%);
 }/*# sourceMappingURL=styles.css.map */
