@@ -113,17 +113,33 @@ body {
     height: 70px;
   }
 }
-.scroll_to_top {
-  position: fixed;
-  bottom: 1rem;
+.control {
+  top: 1rem;
   right: 1rem;
-  padding: 1rem;
+  position: fixed;
+  padding: 3rem 2rem;
   background-color: #fff;
-  cursor: pointer;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.control li {
+  list-style: none;
+  padding: 1rem 0;
 }
 
+/*.scroll_to_top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    cursor: pointer;
+  }*/
 .scrollytelling {
-  position: relative;
+  position: absolute;
+  top: 0;
   height: 15000px;
   width: 100%;
   background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(16, 123, 126, 0.7539390756) 41%, rgb(0, 175, 174) 100%);

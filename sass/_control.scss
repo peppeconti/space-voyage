@@ -1,8 +1,26 @@
-.scroll_to_top {
+.control {
+  top: 1rem;
+  right: 1rem;
+  position:fixed;
+  padding: 3rem 2rem;
+  background-color: #fff;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  li {
+    list-style: none;
+    padding: 1rem 0;
+  }
+}
+
+
+/*.scroll_to_top {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
     padding: 1rem;
     background-color: #fff;
     cursor: pointer;
-  }
+  }*/
