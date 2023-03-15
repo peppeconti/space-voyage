@@ -1,5 +1,5 @@
 import { animate } from './frames.js';
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Observer);
+gsap.registerPlugin(ScrollTrigger, /*ScrollToPlugin,*/ Observer);
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const meteor_wrapper = Array.from(document.querySelectorAll('.meteor-wrapper'));
         const meteors = Array.from(document.querySelectorAll('.meteor'));
         const title = document.querySelector('.title');
-        const to_top = document.querySelector('.scroll_to_top');
-        const to_bottom = document.querySelector('.scroll_to_bottom');
+        //const to_top = document.querySelector('.scroll_to_top');
+        //const to_bottom = document.querySelector('.scroll_to_bottom');
 
         const setResponsiveValues = async () => {
 
@@ -118,9 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
             ScrollTrigger.refresh();
         });
 
-        to_bottom.addEventListener('click', function () {
+        /*to_bottom.addEventListener('click', function () {
 
-            gsap.to(window, { duration: 30, scrollTo: { y: 'max', autoKill: true }});
+            gsap.to(window, { duration: 30, scrollTo: { y: 'max', autoKill: false }});
 
         });
 
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             gsap.to(window, { duration: 30, scrollTo: { y: 0, autoKill: true }});
 
-        })
+        })*/
 
         animate(spaceship_frames);
         meteors.forEach(meteor => animate(meteor));

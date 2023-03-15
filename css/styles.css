@@ -113,31 +113,6 @@ body {
     height: 70px;
   }
 }
-.control {
-  top: 1rem;
-  right: 1rem;
-  position: fixed;
-  padding: 3rem 2rem;
-  background-color: #fff;
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  pointer-events: none;
-}
-.control li {
-  list-style: none;
-  padding: 1rem 0;
-}
-
-/*.scroll_to_top {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    padding: 1rem;
-    background-color: #fff;
-    cursor: pointer;
-  }*/
 .scrollytelling {
   position: absolute;
   top: 0;
