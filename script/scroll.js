@@ -82,9 +82,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const nested_tl_2 = gsap.timeline()
             .to(meteor, { rotate: 360, y: 1000, duration: 2 })
-            .to(spaceship, {x: 150, rotate: 10, ease: ease1, duration: 1 }, '-=1.95')
-            .to(spaceship, {x: 0, ease: ease1, duration: 2 } , '-=1.5')
-            .to(spaceship, {rotate: 0, ease: ease1, duration: 1 } , '-=2')
+            .to(spaceship, { x: 150, rotate: 10, ease: ease1, duration: 1 }, '-=1.95')
+            .to(spaceship, { x: 0, ease: ease1, duration: 2 }, '-=1.5')
+            .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, '-=2')
+            .set(meteor, { y: -100, rotate: 0 })
+
+        const nested_tl_3 = gsap.timeline()
+            .to(meteor, { rotate: 360, y: 1000, duration: 2 })
+            .to(spaceship, { x: -150, rotate: -10, ease: ease1, duration: 1 }, '-=1.95')
+            .to(spaceship, { x: 0, ease: ease1, duration: 2 }, '-=1.5')
+            .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, '-=2')
 
         // MAIN TIMELINE
         const tl = gsap.timeline({
@@ -112,10 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
             .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`, duration: 1 })
             .to(departure, { y: '100%', duration: 1 }, '-=1')
             // 6 UNITS
-            .to('[data-speed]', { opacity: .5, duration: 5, x: (_, el) => (-1 * parseFloat(el.dataset.speed)) * (meteors_wrapper.offsetWidth * 5), onStart: () => console.log('start'), onComplete: () => console.log('complete') }, '+=1')
+            .to('[data-speed]', { opacity: .5, duration: 5, x: (_, el) => (-1 * parseFloat(el.dataset.speed)) * (meteors_wrapper.offsetWidth * 5), onStart: () => console.log('start'), onComplete: () => console.log('complete') }, '+=3')
             // OVERLAPS
             .add(nested_tl, '-=4.6')
             .add(nested_tl_2)
+            .add(nested_tl_3)
             // 2 UNIT
             .to(arrive, { y: '0%', duration: 1 }, '+=1')
             // .5 UNIT
