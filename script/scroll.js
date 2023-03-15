@@ -82,14 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const nested_tl_2 = gsap.timeline()
             .to(asteroid, { rotate: 360, top: '100%', bottom: '0%', duration: 2 })
-            .to(spaceship, { left: '70%', rotate: 10, ease: ease1, duration: 1 }, '-=1.85')
+            .to(spaceship, { left: '65%', rotate: 10, ease: ease1, duration: 1 }, '-=1.85')
             .to(spaceship, { left: '50%', ease: ease1, duration: 2 }, '-=.5')
             .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, '-=2')
             .set(asteroid, { top: '0%', bottom: '100%', rotate: 0 })
 
         const nested_tl_3 = gsap.timeline()
             .to(asteroid, { rotate: 360, top: '100%', bottom: '0%', duration: 2 })
-            .to(spaceship, { left: '30%', rotate: -10, ease: ease1, duration: 1 }, '-=1.95')
+            .to(spaceship, { left: '35%', rotate: -10, ease: ease1, duration: 1 }, '-=1.95')
             .to(spaceship, { left: '50%', ease: ease1, duration: 2 }, '-=.5')
             .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, '-=2')
 
