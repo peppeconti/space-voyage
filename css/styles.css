@@ -129,8 +129,22 @@ body {
   height: 8vw;
 }
 
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20%, -50%);
+  width: 40vw;
+  height: 40vw;
+  background-color: rgb(236, 112, 112);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
 .scrollytelling {
+  position: relative;
   height: 15000px;
   width: 100%;
   background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(16, 123, 126, 0.7539390756) 41%, rgb(0, 175, 174) 100%);
+  overflow: hidden;
 }/*# sourceMappingURL=styles.css.map */

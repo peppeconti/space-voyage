@@ -1,0 +1,11 @@
+.planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-20%, -50%);
+    width: 40vw;
+    height: 40vw;
+    background-color: rgb(236, 112, 112);
+    border-radius: 50%;
+    opacity: .8;
+}
