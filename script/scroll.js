@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // 2 UNITS NESTED
-        const nested_tl = gsap.timeline()
+        const meteors_tl = gsap.timeline()
             .to(spaceship, { rotate: 5, x: 10, ease: ease1, duration: .5 })
             .to(spaceship, { rotate: 0, x: 0, ease: ease1, duration: .5 })
             .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2 + 50}px)`, ease: ease2, duration: 1 }, '-=1')
@@ -81,18 +81,16 @@ document.addEventListener('DOMContentLoaded', () => {
             .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`, ease: ease2, duration: .5 }, '-=1')
             .to(spaceship, { rotate: 0, x: 0, ease: ease1, duration: .5 });
 
-        const nested_tl_2 = gsap.timeline()
+        const asteroid_tl = gsap.timeline()
             .to(asteroid, { rotate: 360, top: '100%', bottom: '0%', duration: 2 })
             .to(spaceship, { left: '65%', rotate: 10, ease: ease1, duration: 1 }, '-=1.85')
             .to(spaceship, { left: '50%', ease: ease1, duration: 2 }, '-=.5')
             .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, '-=2')
             .set(asteroid, { top: '0%', bottom: '100%', rotate: 0 })
-
-        const nested_tl_3 = gsap.timeline()
             .to(asteroid, { rotate: 360, top: '100%', bottom: '0%', duration: 2 })
             .to(spaceship, { left: '35%', rotate: -10, ease: ease1, duration: 1 }, '-=1.95')
             .to(spaceship, { left: '50%', ease: ease1, duration: 2 }, '-=.5')
-            .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, '-=2')
+            .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, '-=2')           
 
         // MAIN TIMELINE
         const tl = gsap.timeline({
@@ -122,10 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // 6 UNITS
             .to('[data-speed]', { opacity: .5, duration: 5, x: (_, el) => (-1 * parseFloat(el.dataset.speed)) * (meteors_wrapper.offsetWidth * 5), onStart: () => console.log('start'), onComplete: () => console.log('complete') }, '+=3')
             // OVERLAPS
-            .add(nested_tl, '-=4.6')
-            .to(planet, { top: '100vw', duration: 10 })
-            .add(nested_tl_2, '-=65')
-            .add(nested_tl_3)
+            .add(meteors_tl, '-=4.6')
+            .to(planet, { top: '100vw', rotate: 90,  duration: 10 })
+            .add(asteroid_tl, '-=6')
             // 2 UNIT
             .to(arrive, { y: '0%', duration: 1 }, '+=1')
             // .5 UNIT
