@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const meteors = Array.from(document.querySelectorAll('.meteor'));
         const title = document.querySelector('.title');
         const asteroid = document.querySelector('.asteroid');
+        const planet = document.querySelector('.planet');
         //const to_top = document.querySelector('.scroll_to_top');
         //const to_bottom = document.querySelector('.scroll_to_bottom');
 
@@ -122,7 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .to('[data-speed]', { opacity: .5, duration: 5, x: (_, el) => (-1 * parseFloat(el.dataset.speed)) * (meteors_wrapper.offsetWidth * 5), onStart: () => console.log('start'), onComplete: () => console.log('complete') }, '+=3')
             // OVERLAPS
             .add(nested_tl, '-=4.6')
-            .add(nested_tl_2)
+            .to(planet, { top: '100vw', duration: 10 })
+            .add(nested_tl_2, '-=65')
             .add(nested_tl_3)
             // 2 UNIT
             .to(arrive, { y: '0%', duration: 1 }, '+=1')
