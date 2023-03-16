@@ -117,8 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
             .to('[data-speed]', { opacity: .5, duration: 5, x: (_, el) => (-1 * parseFloat(el.dataset.speed)) * (meteors_wrapper.offsetWidth * 5), onStart: () => console.log('start'), onComplete: () => console.log('complete') }, '+=3')
             // OVERLAPS
             .add(meteors_tl, '-=4.6')
-            .to(planet, { top: '100vh', rotate: 90,  duration: 10 })
-            .add(asteroid_tl, '-=6')
+            .to(planet, { top: '100vh', rotate: 90,  duration: 6 })
+            .add(asteroid_tl, '-=2')
             // 2 UNIT
             .to(arrive, { y: '0%', duration: 1 }, '+=1')
             // .5 UNIT
