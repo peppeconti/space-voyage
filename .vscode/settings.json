@@ -12,8 +12,4 @@
         }
     ],
     "liveServer.settings.port": 5501
-    // opzioni - minificazione, nome file, percorso/cartelle
-    //    "format": "compressed",
-    //    "extensionName": ".min.css",
-    //    "savePath": "/dist/css"
 }
