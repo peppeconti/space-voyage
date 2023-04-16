@@ -22,6 +22,7 @@ html, body {
   overflow-y: scroll;
   overflow-x: hidden;
   z-index: 100;
+  border: 5px solid red;
 }
 
 .title {
@@ -161,5 +162,4 @@ html, body {
   top: 0;
   height: 100%;
   width: 100%;
-  border: 20px solid red;
 }/*# sourceMappingURL=styles.css.map */
