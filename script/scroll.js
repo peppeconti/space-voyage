@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener(
     "load",
     () => {
+      const getElementScrollbarWidth = (element) => {
+        return element.offsetWidth - element.clientWidth;
+      }
+
       // GRAPHIC ELEMENTS
 
       const scroller = document.querySelector(".scroll-wrapper");
@@ -24,14 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
         )
       ) {
         // true for mobile device
-        gsap.set(content, {
-          position: "fixed",
-        });
+        return
       } else {
         // false for not mobile device
-        gsap.set(content, {
-          position: "sticky",
-        });
+        /*gsap.set(content, {
+          width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
+        });*/
       }
 
       /*gsap.set(departure, {
