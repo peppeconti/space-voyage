@@ -8,10 +8,19 @@
 
 // SCROLLABLE ELEMENT
 
-.scrollytelling {
-  position: relative;
+.scrollbar {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 15000px;
   width: 100%;
   background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(16,123,126,0.7539390756302521) 41%, rgba(0,175,174,1) 100%);
-  overflow: hidden;
+}
+
+.content {
+  position: sticky;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border: 20px solid red;
 }
