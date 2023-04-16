@@ -157,8 +157,6 @@ html, body {
   height: 15000px;
   width: 100%;
   border: 2px solid red;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
   background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(16, 123, 126, 0.7539390756) 41%, rgb(0, 175, 174) 100%);
 }
 
@@ -167,6 +165,4 @@ html, body {
   top: 0;
   height: 100%;
   width: 100%;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
 }/*# sourceMappingURL=styles.css.map */
