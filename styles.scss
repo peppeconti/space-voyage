@@ -14,10 +14,12 @@
   left: 0;
   height: 15000px;
   width: 100%;
+  overscroll-behavior: none;
   background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(16,123,126,0.7539390756302521) 41%, rgba(0,175,174,1) 100%);
 }
 
 .content {
+  overscroll-behavior: none;
   position: sticky;
   top: 0;
   height: 100%;
