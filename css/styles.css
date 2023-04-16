@@ -10,6 +10,7 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  overscroll-behavior: none;
   background-color: rgb(208, 214, 214);
 }
 
@@ -21,6 +22,7 @@ html, body {
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+  overscroll-behavior: none;
   z-index: 100;
   border: 5px solid red;
 }
