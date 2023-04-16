@@ -12,7 +12,7 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  overscroll-behavior-y: none;
+  overscroll-behavior-y: contain;
 }
 
 .scroll-wrapper {
@@ -23,7 +23,7 @@ html, body {
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  overscroll-behavior-y: none;
+  overscroll-behavior-y: contain;
   z-index: 100;
 }
 
@@ -157,7 +157,7 @@ html, body {
   height: 15000px;
   width: 100%;
   border: 2px solid red;
-  overscroll-behavior-y: none;
+  overscroll-behavior-y: contain;
   background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(16, 123, 126, 0.7539390756) 41%, rgb(0, 175, 174) 100%);
 }
 
