@@ -7,11 +7,12 @@
 
 html, body {
   position: fixed;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   overflow: hidden;
   overscroll-behavior: none;
-  background-color: rgb(208, 214, 214);
 }
 
 .scroll-wrapper {
@@ -24,5 +25,4 @@ html, body {
   overflow-x: hidden;
   overscroll-behavior: none;
   z-index: 100;
-  border: 5px solid red;
 }

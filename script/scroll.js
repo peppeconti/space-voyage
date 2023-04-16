@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // GRAPHIC ELEMENTS
 
-        const scroller = document.querySelector('.scroll-wrapper');
+        //const scroller = document.querySelector('.scroll-wrapper');
         const main = document.querySelector('.scrollbar');
         const departure = document.querySelector('.land').contentDocument.getElementById('land-1');
         const arrive = document.querySelector('.land').contentDocument.getElementById('land-2');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // MAIN TIMELINE
         const tl = gsap.timeline({
             scrollTrigger: {
-                scroller: scroller,
+                //scroller: scroller,
                 id: 'main',
                 trigger: main,
                 start: 'top top',
