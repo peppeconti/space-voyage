@@ -5,16 +5,16 @@
   font-family: 'Wallpoet', cursive;
 }
 
-html {
+html, body {
   position: fixed;
   top: 0;
   left: 0;
-  height: 15p;
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-body {
+.scroll-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,8 +22,6 @@ body {
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: red;
-  overscroll-behavior-y: none;
 }
 
 
