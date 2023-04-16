@@ -6,20 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener(
     "load",
     () => {
-      if (
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        )
-      ) {
-        // true for mobile device
-        
-      } else {
-        // false for not mobile device
-      }
-
       // GRAPHIC ELEMENTS
 
-      const scroller = document.querySelector('.scroll-wrapper');
+      const scroller = document.querySelector(".scroll-wrapper");
+      const content = document.querySelector(".content");
       const main = document.querySelector(".scrollbar");
       const departure = document
         .querySelector(".land")
@@ -27,6 +17,22 @@ document.addEventListener("DOMContentLoaded", () => {
       const arrive = document
         .querySelector(".land")
         .contentDocument.getElementById("land-2");
+
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        // true for mobile device
+        gsap.set(content, {
+          position: "fixed",
+        });
+      } else {
+        // false for not mobile device
+        gsap.set(content, {
+          position: "sticky",
+        });
+      }
 
       /*gsap.set(departure, {
             opacity: 1
