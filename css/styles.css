@@ -9,7 +9,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 15p;
   width: 100%;
   overflow: hidden;
 }
@@ -158,8 +158,9 @@ body {
 }
 
 .content {
-  position: fixed;
+  position: sticky;
   top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
 }/*# sourceMappingURL=styles.css.map */
