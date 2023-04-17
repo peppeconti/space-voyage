@@ -79,8 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
       Observer.create({
         onDown: () => console.log('huelà'),
         onUp: (self) => {
-          gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop + self.y}});
-          //alert('joll');
+          gsap.to(main, {
+            duration: 1,
+            tranform: `translateY(-${self.y})`
+          });
         },
       });
     },
