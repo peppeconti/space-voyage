@@ -81,13 +81,13 @@ document.addEventListener("DOMContentLoaded", () => {
           const top = scroller.scrollTop;
           console.log(top + self.y);
           console.log(top);
-          gsap.to(scroller, {duration: 1, scrollTo: {y: top - self.y}});
+          gsap.to(scroller, {duration: .2, scrollTo: {y: top - self.y}});
         },
         onUp: (self) => {
           const top = scroller.scrollTop;
           console.log(top + self.y);
           console.log(top);
-          gsap.to(scroller, {duration: 1, scrollTo: {y: top + self.y}});
+          gsap.to(scroller, {duration: .2, scrollTo: {y: top + self.y}});
         },
       });
     },
