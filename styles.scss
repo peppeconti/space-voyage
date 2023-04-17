@@ -4,6 +4,9 @@
 // SCROLLABLE ELEMENT
 
 .scrollbar {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 15000px;
   width: 100%;
   //border: 2px solid red;
