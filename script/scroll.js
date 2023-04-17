@@ -78,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // OBSERVER
 
       Observer.create({
-        target: scroller,
         onDown: (self) => {
           const top = scroller.scrollTop;
           //console.log(top + self.y);
