@@ -7,14 +7,12 @@
   height: 15000px;
   width: 100%;
   //border: 2px solid red;
-  //background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(16,123,126,0.7539390756302521) 41%, rgba(0,175,174,1) 100%);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(16,123,126,0.7539390756302521) 41%, rgba(0,175,174,1) 100%);
 }
 
 .content {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  position: absolute;
   height: 100%;
   width: 100%;
-  border: 1px solid red;
+  border: 10px solid red;
 }
