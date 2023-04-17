@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelector(".land")
         .contentDocument.getElementById("land-2");
 
-      if (
+      /*if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
           navigator.userAgent
         )
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.set(content, {
           width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
         });
-      }
+      }*/
 
       /*gsap.set(departure, {
             opacity: 1
