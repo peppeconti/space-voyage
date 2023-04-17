@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // GRAPHIC ELEMENTS
 
-      //const scroller = document.querySelector(".scroll-wrapper");
+      const scroller = document.querySelector(".scroll-wrapper");
       const content = document.querySelector(".content");
       const main = document.querySelector(".scrollbar");
       /*const departure = document
@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelector(".land")
         .contentDocument.getElementById("land-2");
 
-      departure.addEventListener("click", () => alert("ciao"));
+      departure.addEventListener("click", () => alert("ciao"));*/
 
-      /*if (
+      if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
           navigator.userAgent
         )
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.set(content, {
           width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
         });
-      }*/
+      }
 
       /*gsap.set(departure, {
             opacity: 1
@@ -49,9 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // MAIN TIMELINE
       const tl = gsap.timeline({
         scrollTrigger: {
+          scroller: scroller,
           id: "main",
           trigger: main,
-          pin: content,
           start: "top top",
           end: "bottom bottom",
           //invalidateOnRefresh: true,
