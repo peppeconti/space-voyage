@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         onDown: () => console.log('huelà'),
         onUp: (self) => {
           gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop + self.y}});
+          alert('joll');
         },
       });
     },
