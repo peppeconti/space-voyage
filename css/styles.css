@@ -35,7 +35,7 @@ html, body {
 }
 
 .content {
-  position: sticky;
+  position: fixed;
   bottom: 0;
   left: 0;
   height: 100%;
