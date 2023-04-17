@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // OBSERVER
 
-      Observer.create({
+      /*Observer.create({
         onDown: (self) => {
           
         },
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
           console.log(top);
           gsap.to(scroller, {duration: 1, scrollTo: {y: top + self.y}});
         },
-      });
+      });*/
     },
     false
   );
