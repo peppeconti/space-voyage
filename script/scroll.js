@@ -34,16 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
           gsap.set(content, {
             width: "100%",
           });
-          gsap.set(scroller, {
-            pointerEvents: "none",
-          });
         } else {
           // false for not mobile device
           gsap.set(content, {
             width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
-          });
-          gsap.set(scroller, {
-            pointerEvents: "all",
           });
         }
       };
@@ -87,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       Observer.create({
         axis: "y",
-        type: "touch",
         onDown: (self) => {
           const top = scroller.scrollTop;
           //console.log(top + self.y);
