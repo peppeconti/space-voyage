@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         onUp: (self) => {
           gsap.to(main, {
             duration: 1,
-            tranform: `translateY(-${self.y})`
+            tranform: `translateY(-${self.y}px)`
           });
         },
       });
