@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
           trigger: main,
           start: "top top",
           end: "bottom bottom",
-          //invalidateOnRefresh: true,
+          invalidateOnRefresh: true,
           scrub: 4,
         },
       });
