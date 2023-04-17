@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
           id: "main",
           trigger: main,
           pin: content,
-          pinSpace: false,
           start: "top top",
           end: "bottom bottom",
           //invalidateOnRefresh: true,
