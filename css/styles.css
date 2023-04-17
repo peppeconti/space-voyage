@@ -20,6 +20,7 @@ html, body {
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+  background-color: red;
 }
 
 .land {
@@ -30,16 +31,15 @@ html, body {
 }
 
 .scrollbar {
-  position: relative;
   height: 15000px;
   width: 100%;
-  background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgba(16, 123, 126, 0.7539390756) 41%, rgb(0, 175, 174) 100%);
 }
 
 .content {
-  position: fixed;
-  top: 0;
+  position: sticky;
+  bottom: 0;
   left: 0;
   height: 100%;
   width: 100%;
+  border: 1px solid red;
 }/*# sourceMappingURL=styles.css.map */

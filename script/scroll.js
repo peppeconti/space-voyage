@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     () => {
       const getElementScrollbarWidth = (element) => {
         return element.offsetWidth - element.clientWidth;
-      }
+      };
 
       // GRAPHIC ELEMENTS
 
@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const arrive = document
         .querySelector(".land")
         .contentDocument.getElementById("land-2");
+
+      departure.addEventListener("click", () => alert("ciao"));
 
       /*if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
