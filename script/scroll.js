@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return
       } else {
         // false for not mobile device
-        /*gsap.set(content, {
+        gsap.set(content, {
           width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
-        });*/
+        });
       }
 
       /*gsap.set(departure, {
