@@ -5,14 +5,13 @@
   font-family: "Wallpoet", cursive;
 }
 
-html, body {
+/*html, body {
   position: fixed;
   height: 100%;
   width: 100%;
   overflow: hidden;
-}
-
-.scroll-wrapper {
+}*/
+/*body {
   position: fixed;
   top: 0;
   left: 0;
@@ -20,8 +19,18 @@ html, body {
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-}
-
+  //border: 10px solid red;
+}*/
+/*.scroll-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  //border: 10px solid red;
+}*/
 .land {
   position: absolute;
   width: 100%;
@@ -36,8 +45,8 @@ html, body {
 }
 
 .content {
-  position: absolute;
-  height: 100%;
+  position: relative;
+  height: 100vh;
   width: 100%;
   border: 10px solid red;
 }/*# sourceMappingURL=styles.css.map */

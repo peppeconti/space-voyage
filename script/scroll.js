@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // GRAPHIC ELEMENTS
 
-      const scroller = document.querySelector(".scroll-wrapper");
+      //const scroller = document.querySelector(".scroll-wrapper");
       const content = document.querySelector(".content");
       const main = document.querySelector(".scrollbar");
-      const departure = document
+      /*const departure = document
         .querySelector(".land")
         .contentDocument.getElementById("land-1");
       const arrive = document
@@ -42,17 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
             opacity: 1
         });*/
 
-      gsap.set(arrive, {
+      /*gsap.set(arrive, {
         y: "100%",
-      });
+      });*/
 
       // MAIN TIMELINE
       const tl = gsap.timeline({
         scrollTrigger: {
-          scroller: scroller,
           id: "main",
           trigger: main,
           pin: content,
+          pinSpace: false,
           start: "top top",
           end: "bottom bottom",
           //invalidateOnRefresh: true,
@@ -60,10 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       });
 
-      tl
+      /*tl
         // .5 UNIT
         .to(departure, { y: "100%", duration: 1 })
-        .to(arrive, { y: "0%", duration: 1 });
+        .to(arrive, { y: "0%", duration: 1 });*/
     },
     false
   );
