@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         adaptToScroller();
       });
 
-      departure.addEventListener('click', alert('cione'))
+      departure.addEventListener('click', () => alert('cione'))
 
       gsap.set(departure, {
         opacity: 1,
