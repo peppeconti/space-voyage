@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // OBSERVER
 
       Observer.create({
+        axis: y,
         type: "touch",
         onDown: (self) => {
           const top = scroller.scrollTop;
