@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       // MAIN TIMELINE
+
       const tl = gsap.timeline({
         scrollTrigger: {
           scroller: scroller,
@@ -77,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // OBSERVER
 
       Observer.create({
-        target: window,
+        target: scroller,
         onDown: (self) => {
           const top = scroller.scrollTop;
           //console.log(top + self.y);
