@@ -48,8 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
         adaptToScroller();
       });
 
-      departure.addEventListener('click', () => alert('cione'))
-
       gsap.set(departure, {
         opacity: 1,
       });
@@ -59,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       // MAIN TIMELINE
-
       const tl = gsap.timeline({
         scrollTrigger: {
           scroller: scroller,
@@ -67,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
           trigger: main,
           start: "top top",
           end: "bottom bottom",
-          invalidateOnRefresh: true,
+          //invalidateOnRefresh: true,
           scrub: 4,
         },
       });
@@ -80,19 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // OBSERVER
 
       Observer.create({
-        axis: "y",
-        onDown: (self) => {
-          const top = scroller.scrollTop;
-          //console.log(top + self.y);
-          //console.log(top);
-          gsap.to(scroller, {duration: 1, scrollTo: {y: top - self.y}});
-        },
-        onUp: (self) => {
-          const top = scroller.scrollTop;
-          //console.log(top + self.y);
-          //console.log(top);
-          gsap.to(scroller, {duration: 1, scrollTo: {y: top + self.y}});
-        },
+        onDown: () => console.log('huelà'),
+        onUp: () => console.log('huelò'),
       });
     },
     false
