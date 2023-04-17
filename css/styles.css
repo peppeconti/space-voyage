@@ -44,4 +44,5 @@ html, body {
   width: 100%;
   border: 1px solid red;
   z-index: 100;
+  pointer-events: all;
 }/*# sourceMappingURL=styles.css.map */
