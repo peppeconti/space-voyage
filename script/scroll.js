@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
           pin: content,
           start: "top top",
           end: "bottom bottom",
-          invalidateOnRefresh: true,
+          //invalidateOnRefresh: true,
           scrub: 4,
         },
       });
