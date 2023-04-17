@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         )
       ) {
         // true for mobile device
-        return
+        console.log('mobile');
       } else {
         // false for not mobile device
         gsap.set(content, {
