@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // OBSERVER
 
       Observer.create({
+        target: window,
         onDown: (self) => {
           
         },
