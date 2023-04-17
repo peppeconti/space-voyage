@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelector(".land")
         .contentDocument.getElementById("land-2");
 
-      /*if (
+      if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
           navigator.userAgent
         )
