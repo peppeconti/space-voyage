@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelector(".land")
         .contentDocument.getElementById("land-2");
 
-      departure.addEventListener("click", () => alert(scroller.scrollHeight));
+      departure.addEventListener("click", () => alert(scroller.scrollTop));
 
       // FUNCTIONS
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // OBSERVER
 
-      Observer.create({
+      /*Observer.create({
         onDown: () => console.log(main.offsetTop),
         onUp: (self) => {
           console.log(main.style.top)
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
             top: main.offsetTop + (-self.y)
           });
         },
-      });
+      });*/
     },
     false
   );
