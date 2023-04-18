@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log('loaded');
       setTimeout(() => {
         gsap.set(loader, {
-          diplay: "none",
+          display: "none",
         });
       }, 3000)
     },
