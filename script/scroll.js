@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger, Observer);
+gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded");
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         },
       });*/
-      alert('loaded')
+      
     },
     false
   );
