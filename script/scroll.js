@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .querySelector(".land")
         .contentDocument.getElementById("land-2");
 
+      departure.addEventListener("click", () => alert(scroller.scrollHeight));
+
       // FUNCTIONS
 
       const adaptToScroller = () => {
