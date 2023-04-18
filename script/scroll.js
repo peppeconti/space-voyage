@@ -5,18 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener(
     "load",
-    async () => {
+    () => {
       // GRAPHIC ELEMENTS
 
       const scroller = document.querySelector(".scroll-wrapper");
+      const loader = document.querySelector(".loader");
       const content = document.querySelector(".content");
       const main = document.querySelector(".scrollbar");
-      const departure = document
-        .querySelector(".land")
-        .contentDocument.getElementById("land-1");
-      const arrive = document
-        .querySelector(".land")
-        .contentDocument.getElementById("land-2");
+      const departure = document.getElementById("land-1");
+      const arrive = document.getElementById("land-2");
 
       departure.addEventListener("click", () => alert(scroller.scrollTop));
 
@@ -50,11 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
         adaptToScroller();
       });*/
 
-      await gsap.set(departure, {
+      gsap.set(departure, {
         opacity: 1,
       });
 
-      await gsap.set(arrive, {
+      gsap.set(arrive, {
         y: "100%",
       });
 
@@ -71,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       });
 
-      await tl
+      tl
         // .5 UNIT
         .to(departure, { y: "100%", duration: 1 })
         .to(arrive, { y: "0%", duration: 1 });
@@ -88,7 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         },
       });*/
-      console.log('loaded')
+      gsap.set(loader, {
+        display: 'none',
+      });
     },
     false
   );

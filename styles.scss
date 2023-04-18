@@ -19,3 +19,11 @@
   width: 100%;
   z-index: 200;
 }
+
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  z-index: 300;
+}
