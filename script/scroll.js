@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener(
     "load",
-    () => {
+    async () => {
       // GRAPHIC ELEMENTS
 
       const scroller = document.querySelector(".scroll-wrapper");
@@ -50,16 +50,16 @@ document.addEventListener("DOMContentLoaded", () => {
         adaptToScroller();
       });*/
 
-      gsap.set(departure, {
+      await gsap.set(departure, {
         opacity: 1,
       });
 
-      gsap.set(arrive, {
+      await gsap.set(arrive, {
         y: "100%",
       });
 
       // MAIN TIMELINE
-      const tl = gsap.timeline({
+     const tl = gsap.timeline({
         scrollTrigger: {
           scroller: scroller,
           id: "main",
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       });
 
-      tl
+      await tl
         // .5 UNIT
         .to(departure, { y: "100%", duration: 1 })
         .to(arrive, { y: "0%", duration: 1 });
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         },
       });*/
-      
+      console.log('loaded')
     },
     false
   );
