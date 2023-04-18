@@ -79,10 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
       Observer.create({
         onDown: () => console.log(main.offsetTop),
         onUp: (self) => {
-          console.log(self.y),
+          console.log(main.style.top)
           gsap.to(main, {
             duration: 5,
-            top: main.top += -self.y
+            top: main.offsetTop + (-self.y)
           });
         },
       });
