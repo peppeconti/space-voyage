@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // OBSERVER
 
-      Observer.create({
+      /*Observer.create({
         onDown: () => console.log(main.offsetTop),
         onUp: (self) => {
           console.log(main.style.top)
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
             top: main.offsetTop + (-self.y)
           });
         },
-      });
+      });*/
     },
     false
   );
