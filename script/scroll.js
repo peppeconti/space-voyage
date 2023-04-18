@@ -77,11 +77,12 @@ document.addEventListener("DOMContentLoaded", () => {
       // OBSERVER
 
       Observer.create({
-        onDown: () => console.log('huelà'),
+        onDown: () => console.log(main.offsetTop),
         onUp: (self) => {
+          console.log(self.y),
           gsap.to(main, {
-            duration: 1,
-            tranform: `translateY(-${self.y}px)`
+            duration: 5,
+            y: -self.y
           });
         },
       });
