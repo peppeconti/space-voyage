@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
           return element.offsetWidth - element.clientWidth;
         };
 
+        alert(navigator.userAgent)
+
         if (
           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
             navigator.userAgent
@@ -41,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       };
 
-      //adaptToScroller();
+      adaptToScroller();
 
       /*window.addEventListener("resize", () => {
         adaptToScroller();
