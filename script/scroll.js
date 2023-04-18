@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
           console.log(self.y),
           gsap.to(main, {
             duration: 5,
-            top: -self.y
+            top: main.top += -self.y
           });
         },
       });
