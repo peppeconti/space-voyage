@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       // MAIN TIMELINE
-     const tl = gsap.timeline({
+      const tl = gsap.timeline({
         scrollTrigger: {
           scroller: scroller,
           id: "main",
@@ -85,9 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         },
       });*/
-      gsap.set(loader, {
-        display: 'none',
-      });
+      setTimeout(() => {
+        gsap.set(loader, {
+          display: "none",
+        });
+      }, 2000);
     },
     false
   );
