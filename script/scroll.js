@@ -9,11 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // GRAPHIC ELEMENTS
 
       const scroller = document.querySelector(".scroll-wrapper");
-      const loader = document.querySelector(".loader");
+      const loader =  document.querySelector(".loader");
       const content = document.querySelector(".content");
       const main = document.querySelector(".scrollbar");
-      const departure = document.getElementById("land-1");
-      const arrive = document.getElementById("land-2");
+      const departure = document
+        .querySelector(".land")
+        .contentDocument.getElementById("land-1");
+      const arrive = document
+        .querySelector(".land")
+        .contentDocument.getElementById("land-2");
 
       departure.addEventListener("click", () => alert(scroller.scrollTop));
 
@@ -23,8 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const getElementScrollbarWidth = (element) => {
           return element.offsetWidth - element.clientWidth;
         };
-
-        alert(navigator.userAgent)
 
         if (
           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -43,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       };
 
-      adaptToScroller();
+      //adaptToScroller();
 
       /*window.addEventListener("resize", () => {
         adaptToScroller();
@@ -87,11 +89,12 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         },
       });*/
+      console.log('loaded');
       setTimeout(() => {
         gsap.set(loader, {
-          display: "none",
+          diplay: "none",
         });
-      }, 2000);
+      }, 3000)
     },
     false
   );
