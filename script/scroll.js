@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       };
 
-      //adaptToScroller();
+      adaptToScroller();
 
-      /*window.addEventListener("resize", () => {
+      window.addEventListener("resize", () => {
         adaptToScroller();
-      });*/
+      });
 
       gsap.set(departure, {
         opacity: 1,
