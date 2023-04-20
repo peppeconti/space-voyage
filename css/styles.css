@@ -29,6 +29,10 @@ html, body {
   left: 0;
 }
 
+.land img {
+  width: 100%;
+}
+
 .scrollbar {
   position: absolute;
   top: 0;

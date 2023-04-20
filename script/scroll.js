@@ -12,12 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const loader =  document.querySelector(".loader");
       const content = document.querySelector(".content");
       const main = document.querySelector(".scrollbar");
-      const departure = document
-        .querySelector(".land")
-        .contentDocument.getElementById("land-1");
-      const arrive = document
-        .querySelector(".land")
-        .contentDocument.getElementById("land-2");
+      const departure = document.getElementById("departure");
+      const arrive = document.getElementById("arrive");
 
       departure.addEventListener("click", () => alert(scroller.scrollTop));
 
