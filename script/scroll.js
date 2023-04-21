@@ -26,24 +26,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (window.matchMedia("(any-pointer: coarse)").matches) {
           // true for mobile device
-          gsap.set(content, {
-            width: "100%",
-          });
-
           //alert('mobile')
           gsap.set(scroller, {
             overflowY: "hidden",
             overflowX: "hidden",
           });
+          gsap.set(content, {
+            width: "100%",
+          });
         } else {
           // false for not mobile device
           //alert('not-mobile')
-          gsap.set(content, {
-            width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
-          });
           gsap.set(scroller, {
             overflowY: "scroll",
             overflowX: "hidden",
+          });
+          gsap.set(content, {
+            width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
           });
         }
       };
