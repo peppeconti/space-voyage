@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
           gsap.set(content, {
             width: "100%",
           });
-          scroller.addEventListener('touchmove', (e) => { e.preventDefault(); }, {passive:false});
+          document.body.addEventListener('touchmove', (e) => { e.preventDefault(); }, {passive:false});
         } else {
           // false for not mobile device
           gsap.set(content, {
