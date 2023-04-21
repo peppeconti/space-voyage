@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // OBSERVER
 
       Observer.create({
-        onDown: () => {
+        onDown: (self) => {
           console.log(scroller.scrollTop)
           if (scroller.scrollTop - self.y > 0) {
             gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop - self.y}});
