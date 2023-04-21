@@ -33,18 +33,18 @@ document.addEventListener("DOMContentLoaded", () => {
           gsap.set(content, {
             width: "100%",
           });
-          gsap.set(scroller, {
+          /*gsap.set(scroller, {
             overflow: "hidden",
-          });
+          });*/
         } else {
           // false for not mobile device
           gsap.set(content, {
             width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
           });
-          gsap.set(scroller, {
+          /*gsap.set(scroller, {
             overflowY: "scroll",
             overflowX: "hidden",
-          });
+          });*/
         }
       };
 
@@ -84,13 +84,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       Observer.create({
         onDown: () => {
-          if (scroller.scrollTo - self.y) {
+          console.log(scroller.scrollTop - self.y)
+          if (scroller.scrollTop - self.y !== NaN) {
             gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop - self.y}});
+          } else {
+            gsap.to(scroller, {duration: 1, scrollTo: 0});
           }
         },
         onUp: (self) => {
-          if (scroller.scrollTo + self.y) {
+          console.log(scroller.scrollTop + self.y)
+          if (scroller.scrollTop + self.y !== NaN) {
             gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop + self.y}});
+          } else {
+            gsap.to(scroller, {duration: 1, scrollTo: 'max'});
           }
         },
       });
