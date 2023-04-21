@@ -76,16 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // OBSERVER
 
-      /*Observer.create({
+      Observer.create({
         onDown: () => console.log(main.offsetTop),
         onUp: (self) => {
-          console.log(main.style.top)
-          gsap.to(main, {
-            duration: 5,
-            top: main.offsetTop + (-self.y)
-          });
+          gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop + self.y}});
         },
-      });*/
+      });
       console.log('loaded');
       setTimeout(() => {
         gsap.set(loader, {

@@ -18,10 +18,8 @@ html, body {
   left: 0;
   height: 100%;
   width: 100%;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
-  overscroll-behavior: none;
-  -webkit-overflow-scrolling: none;
 }
 
 
