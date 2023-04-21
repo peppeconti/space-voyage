@@ -48,6 +48,30 @@ document.addEventListener("DOMContentLoaded", () => {
         adaptToScroller();
       });
 
+      function onTouchStart(e) {
+        // Save position of touch
+        console.log("touchstart");
+        const touch = e.touches[0] || e.changedTouches[0];
+        window.lastY = touch.pageY;
+    }
+
+    function onTouchMove(e) {
+        console.log("touchmove");
+        // Check user isn't scrolling past content. If so, cancel move to prevent ios bouncing
+        const touch = e.touches[0] || e.changedTouches[0];
+        y = touch.pageY;
+        if (y < window.lastY && e.srcElement.scrollTop == (e.srcElement.scrollHeight - e.srcElement.clientHeight)) {
+            console.log("user is trying to scroll down without anywhere to scroll to. Canceling propagation.");
+            e.preventDefault();
+        } else if (y > window.lastY && e.srcElement.scrollTop == 0) {
+            console.log("user is trying to scroll up without anywhere to scroll to. Canceling propagation.");
+            e.preventDefault();
+        }
+    };
+
+    document.addEventListener("touchstart", onTouchStart, { passive: false });
+    document.addEventListener("touchmove", onTouchMove, { passive: false });
+
       gsap.set(departure, {
         opacity: 1,
       });
