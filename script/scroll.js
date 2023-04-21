@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             width: "100%",
           });
           gsap.set(scroller, {
-            overflowY: "hidden",
+            overflow: "hidden",
           });
         } else {
           // false for not mobile device
@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
           gsap.set(scroller, {
             overflowY: "scroll",
+            overflowX: "hidden",
           });
         }
       };
@@ -83,10 +84,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       Observer.create({
         onDown: () => {
-          gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop - self.y}});
+          if (scroller.scrollTo - self.y) {
+            gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop - self.y}});
+          }
         },
         onUp: (self) => {
-          gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop + self.y}});
+          if (scroller.scrollTo + self.y) {
+            gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop + self.y}});
+          }
         },
       });
       // FINISHED
