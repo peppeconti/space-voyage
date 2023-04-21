@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
           gsap.set(content, {
             width: "100%",
           });
-          alert('mobile')
+          alert(navigator.userAgent)
           /*gsap.set(scroller, {
             overflow: "hidden",
           });*/
