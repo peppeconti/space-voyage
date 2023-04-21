@@ -21,6 +21,7 @@ html, body {
   overflow-y: scroll;
   overflow-x: hidden;
   overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .land, .land img {

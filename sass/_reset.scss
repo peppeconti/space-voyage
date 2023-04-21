@@ -20,7 +20,8 @@ html, body {
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  overscroll-behavior: none
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 
