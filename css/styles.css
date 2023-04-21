@@ -39,8 +39,8 @@ html, body {
 }
 
 .content {
-  position: absolute;
-  bottom: 0;
+  position: sticky;
+  top: 0;
   height: 100%;
   width: 100%;
   z-index: 10;

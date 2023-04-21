@@ -61,8 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
           scroller: scroller,
           id: "main",
           trigger: main,
-          pin: content,
-          pinSpace: false,
           start: "top top",
           end: "bottom bottom",
           //invalidateOnRefresh: true,
