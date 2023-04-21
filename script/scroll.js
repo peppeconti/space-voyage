@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // GRAPHIC ELEMENTS
 
       const scroller = document.querySelector(".scroll-wrapper");
-      const loader =  document.querySelector(".loader");
+      const loader = document.querySelector(".loader");
       const content = document.querySelector(".content");
       const main = document.querySelector(".scrollbar");
       const departure = document.getElementById("departure");
@@ -24,22 +24,19 @@ document.addEventListener("DOMContentLoaded", () => {
           return element.offsetWidth - element.clientWidth;
         };
 
-        if (
-          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent
-          )
-        ) {
+        if (window.matchMedia("(any-pointer: coarse)").matches) {
           // true for mobile device
           gsap.set(content, {
             width: "100%",
           });
-          //alert(navigator.userAgent)
+
+          alert('mobile')
           /*gsap.set(scroller, {
             overflow: "hidden",
           });*/
         } else {
           // false for not mobile device
-          //alert(navigator.userAgent)
+          alert('not-mobile')
           gsap.set(content, {
             width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
           });
@@ -86,26 +83,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
       Observer.create({
         onDown: (self) => {
-          console.log(scroller.scrollTop)
+          console.log(scroller.scrollTop);
           if (scroller.scrollTop - self.y > 0) {
-            gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop - self.y}});
+            gsap.to(scroller, {
+              duration: 1,
+              scrollTo: { y: scroller.scrollTop - self.y },
+            });
           }
         },
         onUp: (self) => {
-          console.log(scroller.scrollHeight)
+          console.log(scroller.scrollHeight);
           if (scroller.scrollTop + self.y < scroller.scrollHeight) {
-            gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop + self.y}});
+            gsap.to(scroller, {
+              duration: 1,
+              scrollTo: { y: scroller.scrollTop + self.y },
+            });
           }
         },
       });
       // FINISHED
-      console.log('loaded');
+      console.log("loaded");
       // HIDE PRELOADER
       setTimeout(() => {
         gsap.set(loader, {
           display: "none",
         });
-      }, 3000)
+      }, 3000);
     },
     false
   );
