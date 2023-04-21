@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });*/
         } else {
           // false for not mobile device
-          alert('not mobile')
+          alert(navigator.userAgent)
           gsap.set(content, {
             width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
           });
