@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded");
@@ -33,11 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
           gsap.set(content, {
             width: "100%",
           });
-          document.body.addEventListener('touchmove', (e) => { e.preventDefault(); }, {passive:false});
+          gsap.set(scroller, {
+            overflowY: "hidden",
+          });
         } else {
           // false for not mobile device
           gsap.set(content, {
             width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
+          });
+          gsap.set(scroller, {
+            overflowY: "scroll",
           });
         }
       };
@@ -84,7 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
           gsap.to(scroller, {duration: 1, scrollTo: {y: scroller.scrollTop + self.y}});
         },
       });
+      // FINISHED
       console.log('loaded');
+      // HIDE PRELOADER
       setTimeout(() => {
         gsap.set(loader, {
           display: "none",
