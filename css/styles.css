@@ -39,10 +39,11 @@ html, body {
 }
 
 .content {
-  position: fixed;
+  position: absolute;
+  bottom: 0;
   height: 100%;
   width: 100%;
-  z-index: 200;
+  z-index: 10;
 }
 
 .loader {
@@ -50,5 +51,5 @@ html, body {
   height: 100%;
   width: 100%;
   background-color: red;
-  z-index: 300;
+  z-index: 20;
 }/*# sourceMappingURL=styles.css.map */
