@@ -30,20 +30,21 @@ document.addEventListener("DOMContentLoaded", () => {
             width: "100%",
           });
 
-          alert('mobile')
-          /*gsap.set(scroller, {
-            overflow: "hidden",
-          });*/
+          //alert('mobile')
+          gsap.set(scroller, {
+            overflowY: "hidden",
+            overflowX: "hidden",
+          });
         } else {
           // false for not mobile device
-          alert('not-mobile')
+          //alert('not-mobile')
           gsap.set(content, {
             width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
           });
-          /*gsap.set(scroller, {
+          gsap.set(scroller, {
             overflowY: "scroll",
             overflowX: "hidden",
-          });*/
+          });
         }
       };
 
