@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Observer);
+import { settingMobile } from "./mobileSettings.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded");
@@ -15,43 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const departure = document.getElementById("departure");
       const arrive = document.getElementById("arrive");
 
-      departure.addEventListener("click", () => alert(scroller.scrollTop));
-
-      // FUNCTIONS
-
-      const adaptToScroller = () => {
-        const getElementScrollbarWidth = (element) => {
-          return element.offsetWidth - element.clientWidth;
-        };
-
-        if (window.matchMedia("(any-pointer: coarse)").matches) {
-          // true for mobile device
-          //alert('mobile')
-          gsap.set(scroller, {
-            overflowY: "hidden",
-            overflowX: "hidden",
-          });
-          gsap.set(content, {
-            width: "100%",
-          });
-        } else {
-          // false for not mobile device
-          //alert('not-mobile')
-          gsap.set(scroller, {
-            overflowY: "scroll",
-            overflowX: "hidden",
-          });
-          gsap.set(content, {
-            width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
-          });
-        }
-      };
-
-      adaptToScroller();
-
-      window.addEventListener("resize", () => {
-        adaptToScroller();
-      });
+      //departure.addEventListener("click", () => alert(scroller.scrollTop));
 
       gsap.set(departure, {
         opacity: 1,
@@ -79,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .to(departure, { y: "100%", duration: 1 })
         .to(arrive, { y: "0%", duration: 1 });
 
+      settingMobile(scroller, content);
       // FINISHED
       console.log("loaded");
       // HIDE PRELOADER
