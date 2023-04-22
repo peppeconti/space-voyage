@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Observer);
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded");
@@ -79,28 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .to(departure, { y: "100%", duration: 1 })
         .to(arrive, { y: "0%", duration: 1 });
 
-      // OBSERVER
-
-      Observer.create({
-        onDown: (self) => {
-          console.log(scroller.scrollTop);
-          if (scroller.scrollTop - self.y > 0) {
-            gsap.to(scroller, {
-              duration: 1,
-              scrollTo: { y: scroller.scrollTop - self.y },
-            });
-          }
-        },
-        onUp: (self) => {
-          console.log(scroller.scrollHeight);
-          if (scroller.scrollTop + self.y < scroller.scrollHeight) {
-            gsap.to(scroller, {
-              duration: 1,
-              scrollTo: { y: scroller.scrollTop + self.y },
-            });
-          }
-        },
-      });
       // FINISHED
       console.log("loaded");
       // HIDE PRELOADER
