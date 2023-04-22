@@ -1,11 +1,8 @@
 // gsap.registerPlugin(Observer);
 
 const settingMobile = (scroller, content) => {
-
- 
-
   Observer.create({
-    id: 'main',
+    id: "main",
     onDown: (self) => {
       if (scroller.scrollTop - self.y > 0) {
         gsap.to(scroller, {
@@ -38,7 +35,7 @@ const settingMobile = (scroller, content) => {
       gsap.set(content, {
         width: "100%",
       });
-      Observer.getById('main').enable();
+      Observer.getById("main").enable();
     } else {
       // false for not mobile device
       gsap.set(scroller, {
@@ -48,7 +45,7 @@ const settingMobile = (scroller, content) => {
       gsap.set(content, {
         width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
       });
-      Observer.getById('main').disable();
+      Observer.getById("main").disable();
     }
   };
 
