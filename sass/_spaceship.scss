@@ -1,28 +1,19 @@
-$width: 100vw*(1/6.20)*2 - 15.5vw;
+$width: 100vw * (1/6.2) * 2 - 15.5vw;
 
-.spaceship-wrapper {
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+.spaceship {
+  position: absolute;
+  bottom: $width / 2;
+  left: 50%;
+  width: 200px;
+  height: 16vw;
+  transform: translateX(-50%);
+  overflow: visible;
+  border: 1px solid red;
+
+  .spaceship-frames {
+    height: 16vw;
     position: absolute;
-    width: 100%;
-    height: calc(100% - $width);
-    background-color: red;
-    opacity: .5;
-
-    .spaceship {
-        position: absolute;
-        bottom: 0%;
-        left: 50%;
-        transform: translateX(-50%);
-        overflow: hidden;
-
-        .spaceship-frames {
-            height: 16vw;
-            position: absolute;
-            bottom: 0;
-            right: 0
-        }
-
-    }
+    bottom: 0;
+    right: 0;
+  }
 }
