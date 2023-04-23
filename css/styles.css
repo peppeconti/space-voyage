@@ -27,6 +27,30 @@ html, body {
   left: 0;
 }
 
+.spaceship-wrapper {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 16.7580645161vw);
+  background-color: red;
+  opacity: 0.5;
+}
+.spaceship-wrapper .spaceship {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+.spaceship-wrapper .spaceship .spaceship-frames {
+  height: 16vw;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 .scrollbar {
   position: absolute;
   top: 0;
