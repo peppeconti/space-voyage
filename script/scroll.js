@@ -20,6 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //departure.addEventListener("click", () => alert(scroller.scrollTop));
 
+      // EASE
+
+      const ease1 = Back.easeOut.config(3);
+      const ease2 = Back.easeInOut.config(1.7);
+
       const setResponsiveValues = async () => {
         await gsap.set(spaceship, {
           height: spaceship_frames.offsetHeight,
@@ -53,9 +58,12 @@ document.addEventListener("DOMContentLoaded", () => {
       tl
         // .5 UNIT
         .to(departure, { y: "100%", duration: 1 })
-        .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`, duration: 1 })
+        .to(spaceship, {
+          bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`,
+          duration: 1,
+        })
         .to(arrive, { y: "0%", duration: 1 })
-        .to(spaceship, { bottom: () => '0%', duration: 1 });
+        .to(spaceship, { bottom: () => "0%", ease: ease2, duration: 1 });
 
       settingMobile(scroller, content);
       // FINISHED
