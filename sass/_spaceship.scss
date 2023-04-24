@@ -7,7 +7,6 @@ $width: 100vw*(1/6.20)*2 - 15.5vw;
     position: fixed;
     width: none;
     height: calc(100% - $width);
-    background-color: red;
 
     .spaceship {
         position: absolute;

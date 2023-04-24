@@ -1,5 +1,6 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Observer);
 import { settingMobile } from "./mobileSettings.js";
+import { animate } from "./frames.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded");
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // EASE
 
-      const ease1 = Back.easeOut.config(3);
+      //const ease1 = Back.easeOut.config(3);
       const ease2 = Back.easeInOut.config(1.7);
 
       const setResponsiveValues = async () => {
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
           trigger: main,
           start: "top top",
           end: "bottom bottom",
-          //invalidateOnRefresh: true,
+          invalidateOnRefresh: true,
           scrub: 4,
         },
       });
@@ -65,6 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
         .to(arrive, { y: "0%", duration: 1 })
         .to(spaceship, { bottom: () => "0%", ease: ease2, duration: 1 });
 
+      window.addEventListener("resize", () => {
+        setResponsiveValues();
+        ScrollTrigger.refresh();
+      });
+
+      animate(spaceship_frames, scroller);
       settingMobile(scroller, content);
       // FINISHED
       console.log("loaded");

@@ -34,7 +34,6 @@ html, body {
   position: fixed;
   width: none;
   height: calc(100% - 16.7580645161vw);
-  background-color: red;
 }
 .spaceship-wrapper .spaceship {
   position: absolute;

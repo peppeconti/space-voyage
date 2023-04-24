@@ -1,6 +1,6 @@
 // FRAMES ANIMATION
 
-const animate = (frames) => {
+const animate = (frames, scroller) => {
     const tl = new TimelineMax({ repeat: -1, paused: true, });
 
     window.addEventListener('resize', () => {
@@ -28,7 +28,8 @@ const animate = (frames) => {
     };*/
 
     Observer.create({
-        target: window,
+        id: 'animate',
+        target: scroller,
         type: 'scroll',
         onDown: () => {
             if (ScrollTrigger.getById('main').progress > 0.063 && ScrollTrigger.getById('main').progress < 0.99) { requestAnimationFrame(playFrames) };
