@@ -34,8 +34,8 @@ html, body {
   width: 200px;
   height: 16vw;
   transform: translateX(-50%);
-  overflow: visible;
-  border: 1px solid red;
+  overflow: hidden;
+  border: 2px solid red;
 }
 .spaceship .spaceship-frames {
   height: 16vw;

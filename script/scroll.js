@@ -15,8 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const main = document.querySelector(".scrollbar");
       const departure = document.getElementById("departure");
       const arrive = document.getElementById("arrive");
+      const spaceship = document.querySelector(".spaceship");
+      const spaceship_frames = document.querySelector(".spaceship-frames");
 
       //departure.addEventListener("click", () => alert(scroller.scrollTop));
+
+      const setResponsiveValues = async () => {
+        await gsap.set(spaceship, {
+          height: spaceship_frames.offsetHeight,
+          width: spaceship_frames.offsetWidth / spaceship_frames.dataset.frames,
+        });
+      };
+
+      setResponsiveValues();
 
       gsap.set(departure, {
         opacity: 1,
@@ -42,7 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
       tl
         // .5 UNIT
         .to(departure, { y: "100%", duration: 1 })
-        .to(arrive, { y: "0%", duration: 1 });
+        .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`, duration: 1 })
+        .to(arrive, { y: "0%", duration: 1 })
+        .to(spaceship, { bottom: () => `calc(100vw * (1/6.2) - 15.5vw)`, duration: 1 });
 
       settingMobile(scroller, content);
       // FINISHED
