@@ -6,7 +6,7 @@ const settingMobile = (scroller, content) => {
     onDown: (self) => {
       if (scroller.scrollTop - self.y > 0) {
         gsap.to(scroller, {
-          duration: 1,
+          duration: .5,
           scrollTo: { y: scroller.scrollTop - self.y },
         });
       }
@@ -14,7 +14,7 @@ const settingMobile = (scroller, content) => {
     onUp: (self) => {
       if (scroller.scrollTop + self.y < scroller.scrollHeight) {
         gsap.to(scroller, {
-          duration: 1,
+          duration: .5,
           scrollTo: { y: scroller.scrollTop + self.y },
         });
       }
