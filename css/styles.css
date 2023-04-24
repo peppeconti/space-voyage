@@ -20,6 +20,44 @@ html, body {
   width: 100%;
 }
 
+.title {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-weight: 200;
+  caret-color: transparent;
+}
+
+.blink {
+  animation: blink-animation 1s infinite;
+  -webkit-animation: blink-animation 1s infinite;
+  -moz-animation: blink-animation 1s infinite;
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media screen and (min-width: 280px) {
+  .title {
+    font-size: calc(28px + 68 * (100vw - 280px) / 700);
+  }
+}
+@media screen and (min-width: 980px) {
+  .title {
+    font-size: 96px;
+  }
+}
 .land, .land img {
   position: absolute;
   width: 100%;
@@ -68,6 +106,6 @@ html, body {
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: red;
+  background-color: rgb(0, 175, 174);
   z-index: 20;
 }/*# sourceMappingURL=styles.css.map */

@@ -1,4 +1,5 @@
 @import './sass/reset';
+@import './sass/title';
 @import './sass/land';
 @import './sass/spaceship';
 
@@ -25,6 +26,6 @@
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: red;
+  background-color: rgba(0,175,174,1);
   z-index: 20;
 }
