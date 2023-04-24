@@ -27,17 +27,23 @@ html, body {
   left: 0;
 }
 
-.spaceship {
-  position: absolute;
-  bottom: 8.3790322581vw;
+.spaceship-wrapper {
+  top: 50%;
   left: 50%;
-  width: 200px;
-  height: 16vw;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  width: none;
+  height: calc(100% - 16.7580645161vw);
+  background-color: red;
+}
+.spaceship-wrapper .spaceship {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
-  border: 2px solid red;
 }
-.spaceship .spaceship-frames {
+.spaceship-wrapper .spaceship .spaceship-frames {
   height: 16vw;
   position: absolute;
   bottom: 0;

@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .to(departure, { y: "100%", duration: 1 })
         .to(spaceship, { bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`, duration: 1 })
         .to(arrive, { y: "0%", duration: 1 })
-        .to(spaceship, { bottom: () => `calc(100vw * (1/6.2) - 15.5vw)`, duration: 1 });
+        .to(spaceship, { bottom: () => '0%', duration: 1 });
 
       settingMobile(scroller, content);
       // FINISHED
