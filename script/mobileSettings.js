@@ -4,16 +4,15 @@ const settingMobile = (scroller, content) => {
   Observer.create({
     id: "main",
     onDown: (self) => {
-      if (scroller.scrollTop - self.y > 0) {
-        gsap.to(scroller, {
-          duration: .5,
-          scrollTo: { y: scroller.scrollTop - self.y },
-        });
-      }
-      if (scroller.scrollTop + self.y < 0) {
+      if (scroller.scrollTop - self.y < 0) {
         gsap.to(scroller, {
           duration: .5,
           scrollTo: { y: 0 },
+        });
+      } else if (scroller.scrollTop - self.y > 0) {
+        gsap.to(scroller, {
+          duration: .5,
+          scrollTo: { y: scroller.scrollTop - self.y },
         });
       }
     },
