@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
           duration: 1,
         })
         .to(departure, { y: "100%", duration: 1 }, "-=1")
-        .add(meteors_tl, "-=4.6")
+        .add(meteors_tl)
         // 2 UNIT
         .to(arrive, { y: "0%", duration: 1 }, "+=1")
         // .5 UNIT
