@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             el.querySelector(".meteor").offsetWidth /
             el.querySelector(".meteor").dataset.frames,
           height: (_, el) => el.querySelector(".meteor").offsetHeight,
-          x: "300%",
+          //x: "300%",
         });
 
         let wind_width = window.innerWidth;
@@ -61,6 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       setResponsiveValues();
+
+      gsap.set(meteor_wrapper, {
+        x: "300%",
+      });
+
 
       gsap.set([departure, spaceship], {
         opacity: 0,
