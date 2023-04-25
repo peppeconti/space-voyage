@@ -1,0 +1,42 @@
+.meteors-wrapper {
+  position: sticky;
+  top: 0;
+  gap: 10vh;
+  width: 100%;
+  border: 2px solid red;
+
+  .meteor-wrapper {
+    position: relative;
+    transform: scale(-1);
+    overflow: hidden;
+
+    .meteor {
+      position: absolute;
+      height: 5vw;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+// FLUID TYPOGRAPHY
+
+@media screen and (min-width: 280px) {
+  .meteors-wrapper {
+    .meteor-wrapper {
+      .meteor {
+        height: calc(30px + 40 * ((100vw - 280px) / 700));
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .meteors-wrapper {
+    .meteor-wrapper {
+      .meteor {
+        height: 70px;
+      }
+    }
+  }
+}

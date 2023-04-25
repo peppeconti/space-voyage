@@ -21,7 +21,7 @@ html, body {
 }
 
 .title {
-  position: fixed;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
@@ -69,7 +69,7 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  position: fixed;
+  position: absolute;
   width: none;
   height: calc(100% - 16.7580645161vw);
 }
@@ -87,6 +87,35 @@ html, body {
   right: 0;
 }
 
+.meteors-wrapper {
+  position: sticky;
+  top: 0;
+  gap: 10vh;
+  width: 100%;
+  border: 2px solid red;
+}
+.meteors-wrapper .meteor-wrapper {
+  position: relative;
+  transform: scale(-1);
+  overflow: hidden;
+}
+.meteors-wrapper .meteor-wrapper .meteor {
+  position: absolute;
+  height: 5vw;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (min-width: 280px) {
+  .meteors-wrapper .meteor-wrapper .meteor {
+    height: calc(30px + 40 * (100vw - 280px) / 700);
+  }
+}
+@media screen and (min-width: 980px) {
+  .meteors-wrapper .meteor-wrapper .meteor {
+    height: 70px;
+  }
+}
 .scrollbar {
   position: absolute;
   top: 0;

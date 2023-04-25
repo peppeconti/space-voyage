@@ -17,8 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const departure = document.getElementById("departure");
       const arrive = document.getElementById("arrive");
       const title = document.querySelector(".title");
+      // spaceship
       const spaceship = document.querySelector(".spaceship");
       const spaceship_frames = document.querySelector(".spaceship-frames");
+      // meteors
+      const meteors_wrapper = document.querySelector(".meteors-wrapper");
+      const meteor_wrapper = Array.from(
+        document.querySelectorAll(".meteor-wrapper")
+      );
+      const meteors = Array.from(document.querySelectorAll(".meteor"));
 
       //departure.addEventListener("click", () => alert(scroller.scrollTop));
 
@@ -32,9 +39,33 @@ document.addEventListener("DOMContentLoaded", () => {
           height: spaceship_frames.offsetHeight,
           width: spaceship_frames.offsetWidth / spaceship_frames.dataset.frames,
         });
+        await gsap.set(meteor_wrapper, {
+          width: (_, el) =>
+            el.querySelector(".meteor").offsetWidth /
+            el.querySelector(".meteor").dataset.frames,
+          height: (_, el) => el.querySelector(".meteor").offsetHeight,
+          //x: "300%",
+        });
+
+        let wind_width = window.innerWidth;
+        let wind_height = window.innerHeight;
+        let angle_deg = Math.atan(wind_height / wind_width) * (-180 / Math.PI);
+
+        await gsap.set(meteors_wrapper, {
+          rotate: angle_deg,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "flex-end",
+        });
       };
 
       setResponsiveValues();
+
+      gsap.set(meteor_wrapper, {
+        height: scroller.offsetHeight,
+        x: "300%",
+      });
 
       gsap.set([departure, spaceship], {
         opacity: 0,
@@ -99,7 +130,22 @@ document.addEventListener("DOMContentLoaded", () => {
           duration: 1,
         })
         .to(departure, { y: "100%", duration: 1 }, "-=1")
-        .add(meteors_tl)
+        .to(
+          "[data-speed]",
+          {
+            opacity: 0.5,
+            duration: 5,
+            x: (_, el) =>
+              -1 *
+              parseFloat(el.dataset.speed) *
+              (meteors_wrapper.offsetWidth * 5),
+            onStart: () => console.log("start"),
+            onComplete: () => console.log("complete"),
+          },
+          "+=3"
+        )
+        // OVERLAPS
+        .add(meteors_tl, "-=4.6")
         // 2 UNIT
         .to(arrive, { y: "0%", duration: 1 }, "+=1")
         // .5 UNIT
@@ -111,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       animate(spaceship_frames, scroller);
+      meteors.forEach(meteor => animate(meteor, scroller));
       settingMobile(scroller, content);
       // FINISHED
       console.log("loaded");
