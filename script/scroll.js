@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setResponsiveValues();
 
       gsap.set(meteor_wrapper, {
-        height: scroller.offsetHeight,
         x: "300%",
       });
 
