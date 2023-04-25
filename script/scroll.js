@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // EASE
 
-      //const ease1 = Back.easeOut.config(3);
+      const ease1 = Back.easeOut.config(3);
       const ease2 = Back.easeInOut.config(1.7);
 
       const setResponsiveValues = async () => {
