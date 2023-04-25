@@ -60,8 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       };
 
-      setResponsiveValues();
-
       gsap.set(meteor_wrapper, {
         x: "300%",
       });
@@ -105,6 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
           scroller: scroller,
           id: "main",
           trigger: main,
+          pin: meteors_wrapper,
+          pinSpace: false,
           start: "top top",
           end: "bottom bottom",
           invalidateOnRefresh: true,
@@ -150,13 +150,15 @@ document.addEventListener("DOMContentLoaded", () => {
         // .5 UNIT
         .to(spaceship, { bottom: "0%", ease: ease2, duration: 0.5 });
 
+      setResponsiveValues();
+
       window.addEventListener("resize", () => {
         setResponsiveValues();
         ScrollTrigger.refresh();
       });
 
       animate(spaceship_frames, scroller);
-      meteors.forEach(meteor => animate(meteor, scroller));
+      meteors.forEach((meteor) => animate(meteor, scroller));
       settingMobile(scroller, content);
       // FINISHED
       console.log("loaded");
