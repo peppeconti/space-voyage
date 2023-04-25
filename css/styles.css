@@ -87,12 +87,21 @@ html, body {
   right: 0;
 }
 
+.meteors-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
 .meteors-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   gap: 10vh;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   overflow: visible;
   border: 5px solid red;
