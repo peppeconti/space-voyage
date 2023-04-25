@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const main = document.querySelector(".scrollbar");
       const departure = document.getElementById("departure");
       const arrive = document.getElementById("arrive");
+      const title = document.querySelector('.title');
       const spaceship = document.querySelector(".spaceship");
       const spaceship_frames = document.querySelector(".spaceship-frames");
 
@@ -35,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setResponsiveValues();
 
-      gsap.set(departure, {
-        opacity: 1,
+      gsap.set([departure, spaceship], {
+        opacity: 0,
       });
 
       gsap.set(arrive, {
@@ -58,13 +59,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
       tl
         // .5 UNIT
-        .to(departure, { y: "100%", duration: 1 })
+        .to(title, {
+          top: "-15%",
+          color: "transparent",
+          duration: 0.5,
+          onStart: () => title.classList.remove("blink"),
+          onReverseComplete: () => title.classList.add("blink"),
+        })
+        .to(departure, { opacity: 1, duration: 0.5 }, "-=.5")
+        .to(spaceship, { opacity: 1, duration: 0.5 }, "-=.5")
+        // 1 UNIT
         .to(spaceship, {
           bottom: () => `calc(50% - ${spaceship.offsetHeight / 2}px)`,
           duration: 1,
         })
-        .to(arrive, { y: "0%", duration: 1 })
-        .to(spaceship, { bottom: () => "0%", ease: ease2, duration: 1 });
+        .to(departure, { y: "100%", duration: 1 }, "-=1")
+        // 2 UNIT
+        .to(arrive, { y: "0%", duration: 1 }, "+=1")
+        // .5 UNIT
+        .to(spaceship, { bottom: "0%", ease: ease2, duration: 0.5 });
 
       window.addEventListener("resize", () => {
         setResponsiveValues();
