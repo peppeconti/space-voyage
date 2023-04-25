@@ -104,7 +104,6 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: visible;
-  border: 5px solid red;
 }
 .meteors-wrapper .meteor-wrapper {
   position: relative;
