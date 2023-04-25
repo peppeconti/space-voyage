@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // GRAPHIC ELEMENTS
 
       const scroller = document.querySelector(".scroll-wrapper");
-      const loader = document.querySelector(".loader");
+      //const loader = document.querySelector(".loader");
       const content = document.querySelector(".content");
       const main = document.querySelector(".scrollbar");
       const departure = document.getElementById("departure");
@@ -162,11 +162,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // FINISHED
       console.log("loaded");
       // HIDE PRELOADER
-      setTimeout(() => {
+      /*setTimeout(() => {
         gsap.set(loader, {
           display: "none",
         });
-      }, 3000);
+      }, 3000);*/
     },
     false
   );
