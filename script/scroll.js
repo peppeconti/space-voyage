@@ -46,9 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
           height: (_, el) => el.querySelector(".meteor").offsetHeight,
           //x: "300%",
         });
-        gsap.set(meteors_wrapper, {
-          height: window.innerHeight
-        });
 
         let wind_width = window.innerWidth;
         let wind_height = window.innerHeight;
