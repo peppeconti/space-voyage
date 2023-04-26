@@ -26,8 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".meteor-wrapper")
       );
       const meteors = Array.from(document.querySelectorAll(".meteor"));
-
-      //departure.addEventListener("click", () => alert(scroller.scrollTop));
+      const asteroid = document.querySelector(".asteroid");
 
       // EASE
 
@@ -66,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
         x: "300%",
       });
 
-
       gsap.set([departure, spaceship], {
         opacity: 0,
       });
@@ -99,6 +97,26 @@ document.addEventListener("DOMContentLoaded", () => {
           "-=1"
         )
         .to(spaceship, { rotate: 0, x: 0, ease: ease1, duration: 0.5 });
+
+      const asteroid_tl = gsap
+        .timeline()
+        .to(asteroid, { rotate: 360, top: "100%", bottom: "0%", duration: 2 })
+        .to(
+          spaceship,
+          { left: "65%", rotate: 10, ease: ease1, duration: 1 },
+          "-=1.85"
+        )
+        .to(spaceship, { left: "50%", ease: ease1, duration: 2 }, "-=.5")
+        .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, "-=2")
+        .set(asteroid, { top: "-8vw", bottom: "100%", rotate: 0 })
+        .to(asteroid, { rotate: 360, top: "100%", bottom: "0%", duration: 2 })
+        .to(
+          spaceship,
+          { left: "35%", rotate: -10, ease: ease1, duration: 1 },
+          "-=1.95"
+        )
+        .to(spaceship, { left: "50%", ease: ease1, duration: 2 }, "-=.5")
+        .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, "-=2");
 
       // MAIN TIMELINE
       const tl = gsap.timeline({
@@ -146,6 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
         )
         // OVERLAPS
         .add(meteors_tl, "-=4.6")
+        .add(asteroid_tl, '-=2')
         // 2 UNIT
         .to(arrive, { y: "0%", duration: 1 }, "+=1")
         // .5 UNIT
@@ -157,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       animate(spaceship_frames, scroller);
-      meteors.forEach(meteor => animate(meteor, scroller));
+      meteors.forEach((meteor) => animate(meteor, scroller));
       settingMobile(scroller, content);
       // FINISHED
       console.log("loaded");

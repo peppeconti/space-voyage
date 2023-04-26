@@ -127,6 +127,19 @@ html, body {
     height: 70px;
   }
 }
+.asteroid {
+  position: absolute;
+  top: -8vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8vw;
+  height: 8vw;
+}
+.asteroid .asteroid img {
+  width: 100%;
+  height: 100%;
+}
+
 .scrollbar {
   position: absolute;
   top: 0;
