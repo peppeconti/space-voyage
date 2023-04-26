@@ -4,6 +4,7 @@
 @import './sass/spaceship';
 @import './sass/meteors';
 @import './sass/asteroid';
+@import './sass/planet';
 
 // SCROLLABLE ELEMENT
 
@@ -24,10 +25,10 @@
   z-index: 10;
 }
 
-.loader {
+/*.loader {
   position: fixed;
   height: 100%;
   width: 100%;
   background-color: rgba(0,175,174,1);
   z-index: 20;
-}
+}*/
