@@ -28,7 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       const meteors = Array.from(document.querySelectorAll(".meteor"));
       const asteroid = document.querySelector(".asteroid");
+      // plantet
       const planet = document.querySelector('.planet');
+      const planet_img = document.querySelector('.planet img');
 
       // EASE
 
@@ -166,7 +168,8 @@ document.addEventListener("DOMContentLoaded", () => {
         )
         // OVERLAPS
         .add(meteors_tl, "-=4.6")
-        .to(planet, { top: '100vh', rotate: 90,  duration: 6 })
+        .to(planet, { top: '100vh', duration: 6 })
+        .to(planet_img, { rotate: 90, duration: 6 }, "-=6")
         .add(asteroid_tl, '-=2')
         // 2 UNIT
         .to(arrive, { y: "0%", duration: 1 }, "+=1")

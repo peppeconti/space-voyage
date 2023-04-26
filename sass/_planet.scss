@@ -2,13 +2,14 @@
   position: absolute;
   top: -60vw;
   right: 0;
-  width: 60%;
-  height: 60%;
-  //border-radius: 50%;
+  width: 60vw;
+  height: 60vw;
+  overflow: hidden;
   opacity: 0.8;
-  border: 2px solid red;
 
   img {
+    position: inherit;
+    right: -10vw;
     width: 100%;
     height: 100%;
   }
