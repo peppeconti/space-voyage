@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const arrive = document.getElementById("arrive");
       const title = document.querySelector(".title");
       // spaceship
+      const spaceship_wrapper = document.querySelector(".spaceship-wrapper");
       const spaceship = document.querySelector(".spaceship");
       const spaceship_frames = document.querySelector(".spaceship-frames");
       // meteors
@@ -102,21 +103,21 @@ document.addEventListener("DOMContentLoaded", () => {
         .timeline()
         .to(asteroid, { rotate: 360, top: "100%", bottom: "0%", duration: 2 })
         .to(
-          spaceship,
+          spaceship_wrapper,
           { left: "65%", rotate: 10, ease: ease1, duration: 1 },
           "-=1.85"
         )
-        .to(spaceship, { left: "50%", ease: ease1, duration: 2 }, "-=.5")
-        .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, "-=2")
+        .to(spaceship_wrapper, { left: "50%", ease: ease1, duration: 2 }, "-=.5")
+        .to(spaceship_wrapper, { rotate: 0, ease: ease1, duration: 1 }, "-=2")
         .set(asteroid, { top: "-8vw", bottom: "100%", rotate: 0 })
         .to(asteroid, { rotate: 360, top: "100%", bottom: "0%", duration: 2 })
         .to(
-          spaceship,
+          spaceship_wrapper,
           { left: "35%", rotate: -10, ease: ease1, duration: 1 },
           "-=1.95"
         )
-        .to(spaceship, { left: "50%", ease: ease1, duration: 2 }, "-=.5")
-        .to(spaceship, { rotate: 0, ease: ease1, duration: 1 }, "-=2");
+        .to(spaceship_wrapper, { left: "50%", ease: ease1, duration: 2 }, "-=.5")
+        .to(spaceship_wrapper, { rotate: 0, ease: ease1, duration: 1 }, "-=2");
 
       // MAIN TIMELINE
       const tl = gsap.timeline({
