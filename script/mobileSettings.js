@@ -39,7 +39,7 @@ const settingMobile = (scroller, content) => {
     if (window.matchMedia("(any-pointer: coarse)").matches) {
       // true for mobile device
       gsap.set(scroller, {
-        overflowY: "scroll",
+        overflowY: "hidden",
         overflowX: "hidden",
       });
       gsap.set(content, {
