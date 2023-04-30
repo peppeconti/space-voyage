@@ -49,7 +49,7 @@ const settingMobile = (scroller, content) => {
     } else {
       // false for not mobile device
       gsap.set(scroller, {
-        overflowY: "scroll",
+        overflowY: "hidden",
         overflowX: "hidden",
       });
       gsap.set(content, {
