@@ -39,8 +39,7 @@ const settingMobile = (scroller, content) => {
     if (window.matchMedia("(any-pointer: coarse)").matches) {
       // true for mobile device
       gsap.set(scroller, {
-        overflowY: "hidden",
-        overflowX: "hidden",
+        overflow: "hidden",
       });
       gsap.set(content, {
         width: "100%",
@@ -49,8 +48,7 @@ const settingMobile = (scroller, content) => {
     } else {
       // false for not mobile device
       gsap.set(scroller, {
-        overflowY: "scroll",
-        overflowX: "hidden",
+        overflow: "hidden scroll",
       });
       gsap.set(content, {
         width: `calc(100% - ${getElementScrollbarWidth(scroller)}px)`,
