@@ -3,7 +3,7 @@ import { settingMobile } from "./mobileSettings.js";
 import { animate } from "./frames.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM loaded");
+  //console.log("DOM loaded");
 
   window.addEventListener(
     "load",
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
       meteors.forEach((meteor) => animate(meteor, scroller));
       settingMobile(scroller, content);
       // FINISHED
-      console.log("loaded");
+      //console.log("loaded");
       // HIDE PRELOADER
       /*setTimeout(() => {
         gsap.set(loader, {
