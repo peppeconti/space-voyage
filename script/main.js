@@ -4,6 +4,7 @@ import { animate } from "./frames.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   //console.log("DOM loaded");
+  console.log("Welcome to Space-Voyage Scrollytelling!");
 
   window.addEventListener(
     "load",
@@ -54,9 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let wind_height = window.innerHeight;
         let angle_deg = Math.atan(wind_height / wind_width) * (-180 / Math.PI);
 
-        await gsap.set(main, {
+        /*await gsap.set(main, {
           height: (wind_height * 24) + 'px'
-        });
+        });*/
 
         await gsap.set(meteors_wrapper, {
           rotate: angle_deg,
