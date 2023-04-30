@@ -165,8 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
               -1 *
               parseFloat(el.dataset.speed) *
               (meteors_wrapper.offsetWidth * 5),
-            onStart: () => console.log("start"),
-            onComplete: () => console.log("complete"),
+            //onStart: () => console.log("start"),
+            //onComplete: () => console.log("complete"),
           },
           "+=3"
         )
