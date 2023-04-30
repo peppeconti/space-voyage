@@ -12,7 +12,7 @@ const settingMobile = (scroller, content) => {
       } else if (scroller.scrollTop - self.y > 0) {
         gsap.to(scroller, {
           duration: .5,
-          scrollTo: { y: scroller.scrollTop - 200 },
+          scrollTo: { y: scroller.scrollTop - 250 },
         });
       }
     },
@@ -23,10 +23,9 @@ const settingMobile = (scroller, content) => {
           scrollTo: { y: 'end' },
         });
       } else if (scroller.scrollTop + self.y < scroller.scrollHeight) {
-        console.log(self.y);
         gsap.to(scroller, {
           duration: .5,
-          scrollTo: { y: scroller.scrollTop + 200 },
+          scrollTo: { y: scroller.scrollTop + 250 },
         });
       }
     },
